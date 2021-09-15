@@ -1,0 +1,27 @@
+div {
+    font-family: lucida console;
+    color: #EBB4FF;
+}
+body {
+    background-color: rgb(51, 51, 51);
+}
+#header {
+    background-color: rgb(37, 37, 37);
+
+}
+nav {
+    background-color: rgb(25, 0, 134);
+}
+h6 {align-self: right;}
+#logo {
+    width:171px; 
+    height:96px; 
+    opacity: 1;
+}
+#footer {
+    font-weight: 600;
+    color: #EBB4FF;
+}
+form {
+    align-content: center;
+}

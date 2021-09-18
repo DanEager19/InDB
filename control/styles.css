@@ -1,3 +1,47 @@
+.flexWrap {
+    display: flex;
+    width: 100%;
+} .flexCol1 {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 25%;
+} .flexCol2 {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 75%;
+} .flexCol3 {
+    box-shadow: 0 0 .25em .25em rgb(75, 75, 75),
+    0 0 .25em .25em rgb(75, 75, 75);
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    height: 33%;
+} .flexCol4{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    height: 66%;
+} .flexCol5 {
+    box-shadow: 0 0 .25em .25em rgb(75, 75, 75),
+    0 0 .25em .25em rgb(75, 75, 75);
+    box-sizing: border-box;
+    padding: 10px;
+    width: 75%;
+    height: 100%;
+}
+
+#cover {
+    box-shadow: 0 0 .25em .25em rgb(75, 75, 75),
+    0 0 .25em .25em rgb(75, 75, 75);
+}
+.centerTag {
+    text-align: center;
+}
+
+#status {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
 div {
     font-family: lucida console;
     color: #EBB4FF;
@@ -7,7 +51,13 @@ body {
 }
 #header {
     background-color: rgb(37, 37, 37);
+}
 
+#logo {    
+    margin: 1em;
+}
+.nav_bar {
+    margin-left: 10em;
 }
 nav {
     background-color: rgb(25, 0, 134);
@@ -24,4 +74,20 @@ h6 {align-self: right;}
 }
 form {
     align-content: center;
+}
+.desc {
+    border-style: solid;
+    border-color: rgb(25, 0, 134);
+    border-radius: 20px;
+    margin-top: 1em;
+    background-color: rgb(97, 97, 97);
+}
+.info {
+    border-style: solid;
+    border-color: rgb(25, 0, 134);
+    border-radius: 20px;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-top: 1em;
+    background-color: rgb(97, 97, 97)
 }

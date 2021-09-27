@@ -50,9 +50,13 @@ body {
     background-color: rgb(250, 250, 250);
 }
 #header {
-    background-color: rgb(73, 73, 73);
+    background-color: rgba(73, 73, 73, 0.5);
+    transition: background-color 1s;
 }
 
+#header:hover {
+    background-color: rgba(73, 73, 73, 1);
+}
 #logo {    
     margin: 1em;
 }

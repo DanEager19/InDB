@@ -29,14 +29,18 @@
     width: 75%;
     height: 100%;
 }
+.flexCol6 {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    height: 33%;
+} 
 
 #cover {
     box-shadow: 0 0 .25em .25em rgb(160, 160, 160),
     0 0 .25em .25em rgb(160, 160, 160);
 }
-.centerTag {
-    text-align: center;
-}
+.centerTag {text-align: center;}
 
 #status {
     margin-top: 2em;
@@ -57,28 +61,22 @@ body {
 #header:hover {
     background-color: rgba(73, 73, 73, 1);
 }
-#logo {    
-    margin: 1em;
-}
-.nav_bar {
-    margin-left: 10em;
-}
-nav {
-    background-color: #FF3551;
-}
+#logo {margin: 1em;}
+.nav_bar {margin-left: 10em;}
+nav {background-color: #FF3551;}
 h6 {align-self: right;}
+h5 {align-content: center; margin-top: 0.5em; margin-bottom: 0.5em;}
 #logo {
     width:85px; 
     height:48px; 
     opacity: 1;
 }
-#footer {
-    font-weight: 600;
-    color: #000000;
+#usrimg {
+    width: 50%;
+    height: 50%;
 }
-form {
-    align-content: center;
-}
+#footer {font-weight: 600; color: #000000;}
+form {align-content: center;}
 .desc {
     border-style: solid;
     border-color: rgb(0, 0, 0);

@@ -7,25 +7,43 @@
     <link rel="stylesheet" href="/control/bootstrap.css">
     <link rel="stylesheet" href="/control/styles.css">
     <link rel="stylesheet" href="/control/normalize.css">
-    <link rel="shortcut icon" href="images/logo.png">
+    <link rel="shortcut icon" href="/images/logo.png">
+    <script src="/control/angular.min.js"></script>
 </head>
 <body>
     <header id="header" class="LayoutTop">
         <a href="home.html"><img src="/images/logo.png" id="logo"></a>
+        <a class="text_remove" href=index.html>Home</a> 
+        <a class="text_remove" href="list.html">List</a>  
+        <a class="text_remove" href="login.html">Login</a>
     </header>
-    <nav>
-        <div id="nav_bar">Home - List - Login</div>
-    </nav>
     <div class="container">
         <main>
             <div class="flexWrap">
             <div class="flexCol1">
-                <img src="/images/pfp.png" id="usrimg">
+                <img src="images/pfp.png" id="usrimg">
                 <h5>User</h5>
             </div>
             <div class="flexCol2">
                 <ul style="list-style-type: none;">
-                    <li class="flexWrap"><h6 class="flexCol6">Hollow Knight</h6><h6 class="flexCol6">Completed</h6><h6 class="flexCol6">10</h6></li>
+                    <li class="flexWrap list_header">
+                        <h5 class="flexCol6">Title:</h5>
+                        <h5 class="flexCol6">Status:</h5>
+                        <h5 class="flexCol6">Score:</h5>
+                    </li>
+                    <li class="flexWrap list_entry">
+                        <button class="btn" id="hades">...</button>
+                        <h6 class="flexCol6"><a class="text_remove" href="/info.html">Hades</a></h6>
+                        <h6 class="flexCol6">Completed</h6>
+                        <h6 class="flexCol6">10</h6>
+                        <div id="entry_modal" class="modal">
+                            <div class="modal_content">
+                                <span class="close">&times;</span>
+                                <p>Stuff</p>
+                            </div>
+                        </div>
+                        <script src="view/getEntryInfo.js"></script>
+                    </li>
                 </ul>
             </div>
         </div>

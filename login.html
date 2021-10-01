@@ -8,23 +8,19 @@
     <link rel="stylesheet" href="/control/styles.css">
     <link rel="stylesheet" href="/control/normalize.css">
     <link rel="shortcut icon" href="/images/logo.png">
+    <script src="/control/angular.min.js"></script>
 </head>
 <body>
     <header id="header" class="LayoutTop">
         <a href="home.html"><img src="/images/logo.png" id="logo"></a>
+        <a class="text_remove" href=index.html>Home</a> 
+        <a class="text_remove" href="list.html">List</a>  
+        <a class="text_remove" href="login.html">Login</a>
     </header>
-    <nav>
-        <div id="nav_bar">Home - List - Login</div>
-    </nav>
     <div class="container">
         <main>
-
                 <div class="form-group">
                     <form action="." method="POST" id="login">
-                        <div class="form-group">
-                            <label for="password">Email:</label>
-                            <input type="email" placeholder="Email" autofocus>
-                        </div>
                         <div class="form-group">
                             <label for="password">Username:</label>
                             <input type="text" placeholder="Username">
@@ -34,7 +30,7 @@
                             <input type="password" placeholder="Password">
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-success" value="login">
+                            <input type="submit" class="btn btn-success" value="Login">
                         </div>
                     </form>
                 </div>  

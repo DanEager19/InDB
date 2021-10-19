@@ -13,5 +13,5 @@ app.use(express.static(__dirname));
 
 app.get("/", (req, res) => {
     console.log(__dirname);
-    res.sendFile(__dirname + "/index.html");
+    res.sendFile(__dirname + "/view/index.html");
 })

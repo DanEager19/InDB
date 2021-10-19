@@ -1,7 +1,7 @@
 const {MongoClient} = require('mongodb');
 const {Express} = require('express');
 
-const uri = "mongodb+srv://daniel:@cluster0.xcoys.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = "mongodb+srv://daniel:G9l$23mo0@cluster0.xcoys.mongodb.net/index?retryWrites=true&w=majority";
 const client = new MongoClient(uri, {useNewUrlParser: true, useUnifiedTopology: true});
 
 async function main() {

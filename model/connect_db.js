@@ -1,5 +1,6 @@
+global.TextEncoder = require("util").TextEncoder;
+global.TextDecoder = require("util").TextDecoder;
 const {MongoClient} = require('mongodb');
-const {Express} = require('express');
 
 const uri = "mongodb+srv://daniel:G9l$23mo0@cluster0.xcoys.mongodb.net/index?retryWrites=true&w=majority";
 const client = new MongoClient(uri, {useNewUrlParser: true, useUnifiedTopology: true});
@@ -20,5 +21,5 @@ async function listDatabases(client) {
     console.log("Databases:");
     databasesList.databases.forEach(db => console.log(` - ${db.name}`));
 }
-
+ 
 main().catch(console.error);

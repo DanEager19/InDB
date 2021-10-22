@@ -1,6 +1,6 @@
 FROM node:14
 
-WORKDIR /app
+WORKDIR /home/daniel/Projects/in-db
 
 COPY package*.json ./
 
@@ -12,4 +12,4 @@ ENV PORT=8080
 
 EXPOSE 8080
 
-CMD [ "npm", "start" ]
+CMD [ "node", "index.js" ]

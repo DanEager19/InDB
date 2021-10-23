@@ -2,13 +2,13 @@ global.TextEncoder = require("util").TextEncoder;
 global.TextDecoder = require("util").TextDecoder;
 const {MongoClient} = require('mongodb');
 
-const database = client.db("index");
-const games = database.collection("games");
 const uri = "mongodb+srv://daniel:G9l$23mo0@cluster0.xcoys.mongodb.net/index?retryWrites=true&w=majority";
 const client = new MongoClient(uri, {useNewUrlParser: true, useUnifiedTopology: true});
 
+const database = client.db("index");
+const games = database.collection("games");
 var doc = {
-    title:``,
+    title:`Stardew Valley`,
     summary:"",
     img:"",
     developer:"",

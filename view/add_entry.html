@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>InDB</title>
     <link rel="stylesheet" href="/styles/bootstrap.css">
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/normalize.css">
     <link rel="shortcut icon" href="/images/logo.png">
 </head>
 <body>
@@ -35,7 +35,29 @@
                             <input type="text" id="pub" placeholder="Publisher" name="pub"> 
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">submit</button>
+                            <label for="date">Release Date:</label>
+                            <input type="date" id="date" name="date">
+                            <label for="title">Genres:</label>
+                            <input type="text" id="genres" placeholder="Genres" name="genres">
+                            <label for="title">Rating:</label>
+                            <input type="text" id="rating" placeholder="Rating" name="rating">
+                        </div>
+                        <div class="form-group">
+                            <label for="os">OS:</label>
+                            <input type="text" id="os" placeholder="OS" name="os">
+                            <label for="cpu">Processor:</label>
+                            <input type="text" id="cpu" placeholder="Processor" name="cpu">
+                            <label for="ram">Memory:</label>
+                            <input type="text" id="ram" placeholder="Memory" name="ram">
+                        </div>
+                        <div class="form-group">
+                            <label for="gpu">Graphics:</label>
+                            <input type="text" id="gpu" placeholder="Graphics" name="gpu">
+                            <label for="storage">Storage:</label>
+                            <input type="text" id="storage" placeholder="Storage" name="storage">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
                 </div>  

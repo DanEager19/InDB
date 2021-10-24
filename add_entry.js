@@ -5,9 +5,8 @@ const app = express();
 var bodyParser = require('body-parser')
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 const {MongoClient} = require('mongodb');
-const auth = require("./view/auth.json");
 
-const uri = `mongodb+srv://daniel:${auth.password}@cluster0.xcoys.mongodb.net/index?retryWrites=true&w=majority`;
+const uri = `mongodb://192.168.1.169:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false`;
 const client = new MongoClient(uri, {useNewUrlParser: true, useUnifiedTopology: true});
 
 const database = client.db("index");
@@ -35,19 +34,19 @@ app.get('/', (req, res) => {
 
 app.post('/', urlencodedParser, (req, res) => {
     doc = {
-        title:`${req.body.title}`,
-        summary:`${req.body.summary}`,
+        title:req.body.title,
+        summary:req.body.summary,
         img:"",
-        developer:`${req.body.dev}`,
-        publisher:`${req.body.pub}`,
-        release_date:{"$date":""},
-        genres:[],
-        rating:"",
-        os:"",
-        processor:"",
-        memory:"",
-        graphics:"",
-        storage:""
+        developer:req.body.dev,
+        publisher:req.body.pub,
+        release_date:req.body.date,
+        genres:[req.body.genres],
+        rating:req.body.rating,
+        os:req.body.os,
+        processor:req.body.cpu,
+        memory:req.body.ram,
+        graphics:req.body.gpu,
+        storage:req.body.storage
     }
     insertEntry().catch(console.error);
     res.sendFile(__dirname + '/view/index.html');

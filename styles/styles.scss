@@ -35,7 +35,6 @@ $tinted-white: rgb(223, 223, 223);
 }.flexCol6 {
     @include flex(10px, 100%, 33%); 
 } 
-
 .text_remove {
     text-decoration: none; 
     color: inherit; 

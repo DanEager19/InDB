@@ -4,32 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>InDB</title>
-    <link rel="stylesheet" href="/styles/bootstrap.css">
-    <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="stylesheet" href="/styles/normalize.css">
+    <link rel="stylesheet" href="./styles/bootstrap.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/normalize.css">
     <link rel="shortcut icon" href="/images/logo.png">
 </head>
 <body>
     <header id="header" class="LayoutTop">
-        <a href="index.html"><img src="/images/logo.png" id="logo"></a>
-        <a class="text_remove" href="/view/index.html">Home</a> 
-        <a class="text_remove" href="/view/list.html">List</a>  
-        <a class="text_remove" href="/view/login.html">Login</a>
+        <a href="index.html"><img src="./images/logo.png" id="logo"></a>
+        <a class="text_remove" href="./view/index.html">Home</a> 
+        <a class="text_remove" href="./view/list.html">List</a>  
+        <a class="text_remove" href="./view/login.html">Login</a>
     </header>
     <div class="container">
         <main>
                 <div class="form-group">
-                    <form action="." method="POST" id="login">
+                    <form action="/" method="POST" id="login">
                         <div class="form-group">
-                            <label for="password">Username:</label>
-                            <input type="text" placeholder="Username">
+                            <label for="title">Title:</label>
+                            <input type="text" id="title" placeholder="Title" name="title">
                         </div>
                         <div class="form-group">
-                            <label for="password">Password:</label>
-                            <input type="password" placeholder="Password">
+                            <label for="summary">Summary:</label>
+                            <textarea id="summary" rows="5" cols="25" name="summary"></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-success" value="Add Entry">
+                            <label for="dev">Developer:</label>
+                            <input type="text" id="dev" placeholder="Developer" name="dev">
+                            <label for="pub">Publisher:</label>
+                            <input type="text" id="pub" placeholder="Publisher" name="pub"> 
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">submit</button>
                         </div>
                     </form>
                 </div>  

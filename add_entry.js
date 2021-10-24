@@ -5,7 +5,7 @@ const app = express();
 var bodyParser = require('body-parser')
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 const {MongoClient} = require('mongodb');
-const auth = require("./auth.json");
+const auth = require("./view/auth.json");
 
 const uri = `mongodb+srv://daniel:${auth.password}@cluster0.xcoys.mongodb.net/index?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, {useNewUrlParser: true, useUnifiedTopology: true});
@@ -19,6 +19,7 @@ async function insertEntry() {
     try {
         await client.connect();
         await games.insertOne(doc);
+        console.log('Entry sent')
     } catch (e) {
         console.error(e);
     } finally {
@@ -29,7 +30,7 @@ async function insertEntry() {
 app.use(express.static(__dirname));
 
 app.get('/', (req, res) => {
-       res.sendFile(__dirname + '/add_entry.html');
+       res.sendFile(__dirname + '/view/add_entry.html');
 });
 
 app.post('/', urlencodedParser, (req, res) => {
@@ -49,7 +50,7 @@ app.post('/', urlencodedParser, (req, res) => {
         storage:""
     }
     insertEntry().catch(console.error);
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/view/index.html');
 });
 
 app.listen(3000);

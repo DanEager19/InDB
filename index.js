@@ -29,7 +29,7 @@ async function insertEntry () {
 app.use(express.static(__dirname))
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/view/add_entry.html')
+  res.sendFile(__dirname + '/src/index.js')
 })
 
 app.post('/', urlencodedParser, (req, res) => {

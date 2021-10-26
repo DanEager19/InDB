@@ -26,8 +26,8 @@ const login = (
             </div>
         </form>
     </div>
-  )
-  const add_entry = (
+)
+const add_entry = (
     <form action="/" method="POST" id="login">
         <div class="d-flex flex-column">
             <div class="d-flex justify-content-center flex-row">
@@ -72,7 +72,7 @@ const login = (
                             <input type="text" id="dev" placeholder="Developer" name="dev"/>
                         </div>
                         <div class="p-2">
-                            <input type="text" id="pub" placeholder="Publisher" name="pub"/> 
+                            <input type="text" id="pub" placeholder="Publisher" name="pub"/>
                         </div>
                         <div class="p-2">
                             <input type="date" id="date" name="date"/>
@@ -114,11 +114,11 @@ const login = (
                         </div>
                         <div class="p-2">
                             <input type="text" id="ram" placeholder="Memory" name="ram"/>
-                        </div>                                
+                        </div>
                         <div class="p-2">
                             <input type="text" id="gpu" placeholder="Graphics" name="gpu"/>
                         </div>
-                        <div class="p-2">                         
+                        <div class="p-2">
                             <input type="text" id="storage" placeholder="Storage" name="storage"/>
                         </div>
                     </div>
@@ -129,8 +129,8 @@ const login = (
             </div>
         </div>
     </form>
-  )
-  const list = (
+)
+const list = (
     <div class="flexWrap">
         <div class="flexCol1 usr">
             <img src="/images/pfp.png"/>
@@ -152,13 +152,13 @@ const login = (
             </ul>
         </div>
     </div>
-  )
-  const info = (
+)
+const info = (
     <div class="container flexWrap">
         <div class="flexCol1 centerTag">
             <h1>Hades</h1>
-            <img id="cover" src="/images/Hades_cover_art.jpg"/> 
-            
+            <img id="cover" src="/images/Hades_cover_art.jpg"/>
+
             <form action="." method="POST" id="status">
                 <select name="game_status">
                     <option value="default_status"></option>
@@ -213,6 +213,4 @@ const login = (
             </div>
         </div>
     </div>
-  )
-  
-  
+)

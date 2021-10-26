@@ -135,14 +135,9 @@
   margin-bottom: 2em;
 }
 #header {
-  color:rgb(0, 0, 0); 
-  background-color: rgba(73, 73, 73, 0.5);
-   transition: background-color 1s, color 1s;
+  color:#FF3551; 
+  background-color: rgba(73, 73, 73);
   font-weight: 600;
-}
-#header:hover {
-  color: #FF3551; 
-  background-color: rgba(73, 73, 73, 1);
 }
 #logo {
   margin-top: 1em; 

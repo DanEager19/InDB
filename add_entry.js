@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 const { MongoClient } = require('mongodb')
 
-const uri = 'mongodb://192.168.1.169:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false'
+const uri = 'mongodb://www.in-db.net:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false'
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 
 const database = client.db('index')

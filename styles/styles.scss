@@ -21,9 +21,9 @@ $tinted-white: rgb(223, 223, 223);
     display: flex; 
     width: 100%;
 } .flexCol1 {
-    @include flex(10px, 75%, 100%)
-} .flexCol2 {
     @include flex(10px, 25%, 100%)
+} .flexCol2 {
+    @include flex(10px, 75%, 100%)
 } .flexCol3 {
     @include box-shadow();
     @include flex(10px, 100%, 33%); 
@@ -48,7 +48,7 @@ $tinted-white: rgb(223, 223, 223);
     background-color: rgba(73, 73, 73, 1); 
     color: $red-pink; 
     border-radius: 5px;
-    h5 {
+    & > h5 {
         text-align: center; 
         margin-left: 2.5em;
     };
@@ -104,7 +104,7 @@ $tinted-white: rgb(223, 223, 223);
 .usr {
     text-align: center; 
     margin: 1em, 0; 
-    img {
+    & > img {
         float: center; 
         width: 50%; 
         height: 75%;

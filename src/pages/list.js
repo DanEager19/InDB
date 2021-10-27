@@ -3,7 +3,7 @@ function list() {
     return (
     <div class="flexWrap">
         <div class="flexCol1 usr">
-            <img src="/images/pfp.png"/>
+            <img src="/images/pfp.png" alt="Profile"/>
             <h5>User</h5>
         </div>
         <div class="flexCol2">

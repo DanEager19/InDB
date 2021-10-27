@@ -1,5 +1,5 @@
 import React from "react";
-function add_entry() {
+function Add_entry() {
     return (
         <div className="container">
             <form action="/" method="POST" id="login">
@@ -7,10 +7,10 @@ function add_entry() {
                     <div className="row">
                         <div className="col">
                             <div className="row col-6 col-md-4">
-                                <label for="title">Title:</label>
+                                <label htmlFor="title">Title:</label>
                             </div>
                             <div className="row col-6 col-md-4">
-                                <label for="summary">Summary:</label>
+                                <label htmlFor="summary">Summary:</label>
                             </div>
                         </div>
                         <div className="col">
@@ -25,19 +25,19 @@ function add_entry() {
                     <div className="row">
                         <div className="col">
                             <div className="row">
-                                <label for="dev">Developer:</label>
+                                <label htmlFor="dev">Developer:</label>
                             </div>
                             <div className="row">
-                                <label for="pub">Publisher:</label>
+                                <label htmlFor="pub">Publisher:</label>
                             </div>
                             <div className="row">
-                                <label for="date">Release Date:</label>
+                                <label htmlFor="date">Release Date:</label>
                             </div>
                             <div className="row">
-                                <label for="genres">Genres:</label>
+                                <label htmlFor="genres">Genres:</label>
                             </div>
                             <div className="row">
-                                <label for="rating">Rating:</label>
+                                <label htmlFor="rating">Rating:</label>
                             </div>
                         </div>
                         <div className="col">
@@ -59,19 +59,19 @@ function add_entry() {
                         </div>
                             <div className="col">
                                 <div className="row">
-                                    <label for="os">OS:</label>
+                                    <label htmlFor="os">OS:</label>
                                 </div>
                                 <div className="row">
-                                    <label for="cpu">Processor:</label>
+                                    <label htmlFor="cpu">Processor:</label>
                                 </div>
                                 <div className="row">
-                                    <label for="ram">Memory:</label>
+                                    <label htmlFor="ram">Memory:</label>
                                 </div>
                                 <div className="row">
-                                    <label for="gpu">Graphics:</label>
+                                    <label htmlFor="gpu">Graphics:</label>
                                 </div>
                                 <div className="row">
-                                    <label for="storage">Storage:</label>
+                                    <label htmlFor="storage">Storage:</label>
                                 </div>
                             </div>
                             <div className="col">
@@ -100,4 +100,4 @@ function add_entry() {
         </div>
     )
 }
-export default add_entry;
+export default Add_entry;

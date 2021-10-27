@@ -1,33 +1,33 @@
 import React from "react";
-function login() {
+function Login() {
 return (
-    <div class="form-group">
+    <div className="form-group">
         <form action="." method="POST" id="login">
-            <div class="d-flex flex-column">
-                <div class="d-flex justify-content-center flex-row">
-                    <div class="d-flex flex-column">
-                        <div class="form-group p-2">
-                            <label for="username">Username:</label>
+            <div className="d-flex flex-column">
+                <div className="d-flex justify-content-center flex-row">
+                    <div className="d-flex flex-column">
+                        <div className="form-group p-2">
+                            <label htmlFor="username">Username:</label>
                         </div>
-                        <div class="form-group p-2">
-                            <label for="password">Password:</label>
+                        <div className="form-group p-2">
+                            <label htmlFor="password">Password:</label>
                         </div>
                     </div>
-                    <div class="d-flex flex-column">
-                        <div class="form-group p-2">
+                    <div className="d-flex flex-column">
+                        <div className="form-group p-2">
                             <input type="text" placeholder="Username"/>
                         </div>
-                        <div class="form-group p-2">
+                        <div className="form-group p-2">
                             <input type="password" placeholder="Password"/>
                         </div>
                     </div>
                 </div>
-                <div class="form-group d-flex justify-content-center p-2">
-                    <input type="submit" class="btn btn-secondary" value="Login"/>
+                <div className="form-group d-flex justify-content-center p-2">
+                    <input type="submit" className="btn btn-secondary" value="Login"/>
                 </div>
             </div>
         </form>
     </div>
 );
 }
-export default login;
+export default Login;

@@ -1,9 +1,9 @@
 import React from "react";
 
-function info() {
+function Info() {
     return (
-        <div class="container flexWrap">
-        <div class="flexCol1 centerTag">
+        <div className="container flexWrap">
+        <div className="flexCol1 centerTag">
             <h1>Hades</h1>
             <img id="cover" src="/images/Hades_cover_art.jpg"/>
 
@@ -32,14 +32,14 @@ function info() {
                 </select>
             </form>
         </div>
-        <div class="flexCol2">
-            <div class="flexCol3 desc">
-                <h4 class="centerTag">Summary</h4>
-                <p id="summary" class="centerTag"></p>
+        <div className="flexCol2">
+            <div className="flexCol3 desc">
+                <h4 className="centerTag">Summary</h4>
+                <p id="summary" className="centerTag"></p>
             </div>
-            <div class="container flexWrap flexCol4">
-                <div class="flexCol5 info">
-                        <h4 class="centerTag">Info</h4>
+            <div className="container flexWrap flexCol4">
+                <div className="flexCol5 info">
+                        <h4 className="centerTag">Info</h4>
                         <ul style="list-style-type: none;">
                             <li id="dev"><b>Developer: </b> Supergiant Games</li>
                             <li id="pub"><b>Publisher: </b> Supergiant Games</li>
@@ -48,8 +48,8 @@ function info() {
                             <li id="rating"><b>Rating: </b>T</li>
                         </ul>
                 </div>
-                <div class="flexCol5 info">
-                    <h4 class="centerTag">System Requirements</h4>
+                <div className="flexCol5 info">
+                    <h4 className="centerTag">System Requirements</h4>
                     <ul style="list-style-type: none;">
                         <li id="os"><b>OS: </b>Windows 7 SP1</li>
                         <li id="cpu"><b>Processor: </b>Dual Core 2.4 GHz</li>
@@ -63,4 +63,4 @@ function info() {
     </div>
     );
 }
-export default info;
+export default Info;

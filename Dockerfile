@@ -1,6 +1,6 @@
 FROM node:14
 
-WORKDIR /home/daniel/Projects/in-db
+WORKDIR ./
 
 COPY package*.json ./
 

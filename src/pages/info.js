@@ -1,6 +1,6 @@
 import React from "react";
 
-const info = () => {
+function info() {
     return (
         <div class="container flexWrap">
         <div class="flexCol1 centerTag">

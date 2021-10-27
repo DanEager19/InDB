@@ -1,5 +1,5 @@
 import React from "react";
-const login = () => {
+function login() {
 return (
     <div class="form-group">
         <form action="." method="POST" id="login">

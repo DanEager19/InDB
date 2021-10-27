@@ -1,31 +1,40 @@
+//Depndencies
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import Navbar from "./components/navbar"
+
+//Styles
+import 'bootstrap/dist/css/bootstrap.css';
+import "./index.css"
+
+//Components
+import Navigation from "./components/navbar"
+import Footer from "./components/footer";
+
+//Pages
 import add_entry from "./pages/add_entry"
 import list from "./pages/list"
 import login from "./pages/login"
-import info from "./pages/info"
+import Home from './pages/home';
 
 function App() {
     return(
-        <nav>
             <div>
               <Router>
-                  <Navbar />
+                  <Navigation></Navigation>
                   <Switch>
-                      <Route path='/' exact component={info} />
-                      <Route path='/list' component={list} />
-                      <Route path='/login' component={login} />
-                      <Route path='/add_entry' component={add_entry} />
+                      <Route exact path='/' component={Home} />
+                      <Route exact path='/list' component={list} />
+                      <Route exact path='/login' component={login} />
+                      <Route exact path='/add_entry' component={add_entry} />
                   </Switch>
               </Router>
+              <Footer />
           </div>
-        </nav>
     );
 }
 
 ReactDOM.render(
-    App, 
+    <App />, 
   document.getElementById('root')
 );

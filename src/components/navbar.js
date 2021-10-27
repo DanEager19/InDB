@@ -1,27 +1,30 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Navbar, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+function Navigation() {
     return (
-        <nav className="LayoutTop" id="Header">
-        <div>
-            <ul>
-            <li>
-                <Link to="/">Home</Link>
-            </li>
-            <li>
-                <Link to="/list">List</Link>
-            </li>
-            <li>
-                <Link to="/login">Login</Link>
-            </li>
-            <li>
-                <Link to="/add_entry">Add Entry</Link>
-            </li>
-            </ul>
-        </div>
-        </nav>
+        <Navbar expand="lg" id="header">
+            <Navbar.Brand href="#home"><img alt="Logo" id="logo" src="/images/logo.png"/></Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="navbar">
+                <Nav className="mr-auto">
+                    <Link to="/" className="text_remove" >
+                        <Nav.Link href="#home">Home</Nav.Link>
+                    </Link>
+                    <Link to="/list" className="text_remove" >
+                        <Nav.Link href="#list">List</Nav.Link>
+                    </Link>
+                    <Link to="/login" className="text_remove">                    
+                        <Nav.Link href="#login">Login</Nav.Link>
+                    </Link>
+                    <Link to="add_entry" className="text_remove" >
+                        <Nav.Link href="#add_entry">Add Entry</Nav.Link>
+                    </Link>
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
     );
 }
 
-export default Navbar;
+export default Navigation;

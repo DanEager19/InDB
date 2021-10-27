@@ -1,5 +1,5 @@
 import React from "react";
-const list = () => {
+function list() {
     return (
     <div class="flexWrap">
         <div class="flexCol1 usr">
@@ -7,7 +7,7 @@ const list = () => {
             <h5>User</h5>
         </div>
         <div class="flexCol2">
-            <ul style="list-style-type: none;">
+            <ul>
                 <li class="flexWrap list_header">
                     <h5 class="flexCol6">Title:</h5>
                     <h5 class="flexCol6">Status:</h5>

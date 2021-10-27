@@ -110,6 +110,9 @@ $tinted-white: rgb(223, 223, 223);
         height: 75%;
     };
 }
+.nav_text {
+    color:$red-pink;
+}
 
 #hades {
     font-weight: 700;
@@ -123,8 +126,7 @@ $tinted-white: rgb(223, 223, 223);
 }
 #header {
     color:$red-pink; 
-    background-color: rgba(73, 73, 73, 1); 
-    transition: background-color 1s, color 1s;
+    background-color: rgb(175, 175, 175); 
     font-weight: 600;
     z-index: 1;
 }
@@ -150,4 +152,12 @@ body {
 }
 h6 {
     align-self: right;
+}
+ul {
+    list-style-type: none;
+  }
+  .v-align {
+    display: inline-block;
+    float: none;
+    vertical-align: middle;
 }

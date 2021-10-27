@@ -68,9 +68,6 @@
 .list_entry > h6 {
   text-align: center;
 }
-.centerTag {
-  text-align: center;
-}
 .desc {
   border-style: solid; 
   border-color: rgb(0, 0, 0); 
@@ -124,6 +121,7 @@
   height: 75%;
 }
 
+
 #hades {
   font-weight: 700;
 }
@@ -136,7 +134,7 @@
 }
 #header {
   color:#FF3551; 
-  background-color: rgba(73, 73, 73);
+  background-color: rgb(175, 175, 175);
   font-weight: 600;
 }
 #logo {
@@ -165,4 +163,13 @@ body {
 }
 h6 {
   align-self: right;
+}
+
+ul {
+  list-style-type: none;
+}
+.v-align {
+  display: inline-block;
+  float: none;
+  vertical-align: middle;
 }

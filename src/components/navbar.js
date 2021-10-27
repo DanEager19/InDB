@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <nav class="LayoutTop" id="Header">
+        <nav className="LayoutTop" id="Header">
         <div>
             <ul>
             <li>

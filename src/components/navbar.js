@@ -11,17 +11,17 @@ function Navigation() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="navbar">
                 <Nav className="mr-auto">
-                    <Link to="/" className="text_remove" >
-                        <Nav.Link href="#home">Home</Nav.Link>
+                    <Link to="/" className="text_remove p-2">
+                        <Nav.Link className="nav_word" href="#home">Home</Nav.Link>
                     </Link>
-                    <Link to="/list" className="text_remove" >
-                        <Nav.Link href="#list">List</Nav.Link>
+                    <Link to="/list" className="text_remove p-2">
+                        <Nav.Link className="nav_word" href="#list">List</Nav.Link>
                     </Link>
-                    <Link to="/login" className="text_remove">                    
-                        <Nav.Link href="#login">Login</Nav.Link>
+                    <Link to="/login" className="text_remove p-2">                    
+                        <Nav.Link className="nav_word" href="#login">Login</Nav.Link>
                     </Link>
-                    <Link to="add_entry" className="text_remove" >
-                        <Nav.Link href="#add_entry">Add Entry</Nav.Link>
+                    <Link to="add_entry" className="text_remove p-2" >
+                        <Nav.Link className="nav_word" href="#add_entry">Add Entry</Nav.Link>
                     </Link>
                 </Nav>
             </Navbar.Collapse>

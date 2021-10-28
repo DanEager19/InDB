@@ -15,6 +15,7 @@ import Add_entry from "./pages/add_entry"
 import List from "./pages/list"
 import Login from "./pages/login"
 import Home from './pages/home'
+import Info from './pages/info'
 
 function App() {
     return(
@@ -24,7 +25,7 @@ function App() {
                 <Switch>
                     <Route exact path='/' component={Home} />
                     <Route exact path='/list' component={List} />
-                    <Route exa ct path='/login' component={Login} />
+                    <Route exact path='/login' component={Login} />
                     <Route exact path='/add_entry' component={Add_entry} />
                 </Switch>
             </Router>

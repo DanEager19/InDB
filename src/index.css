@@ -41,8 +41,6 @@
 .text_remove {
   text-decoration: none; 
   color: inherit; 
-  margin-right: 2em; 
-  margin-left: 2em;
 } 
 .text_remove:hover {
   text-decoration: none; 
@@ -51,14 +49,12 @@
 .list_header{
   background-color: rgba(73, 73, 73, 1); 
   color: #FF3551; 
-  border-radius: 5px;
 }
 .list_header > h5 {
   text-align: center; 
   margin-left: 2.5em
 };
 .list_entry{
-  transition: background-color 0.5s; 
   border-radius: 5px;
 }
 .list_entry:hover {
@@ -168,3 +164,13 @@ h6 {
 ul {
   list-style-type: none;
 }
+
+#navbar {
+  color: #FF3551;
+}
+
+.nav_word {
+  font-weight: 600;
+  color: #FF3551;
+}
+

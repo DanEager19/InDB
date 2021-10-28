@@ -2,7 +2,7 @@ import React from "react";
 function Add_entry() {
     return (
         <div className="container">
-            <form action="/" method="POST" id="login">
+            <form action="." method="POST" id="login">
                 <div className="row">
                     <div className="row">
                         <div className="row">
@@ -28,7 +28,6 @@ function Add_entry() {
                     </div>
                     <div className="row">
                         <div className="col">
-                            
                             <div className="row">
                                 <h4>Info:</h4>
                                 <hr></hr>

@@ -6,9 +6,7 @@ class Game {
         this.title = title;
         this.score = score;
         this.status = status;
-
     }
-
 }
 
 let Hades = new Game("Hades", 9, "Completed")

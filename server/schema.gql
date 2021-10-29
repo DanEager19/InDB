@@ -1,6 +1,72 @@
-type {
-    title: String!
+type User {
+    username: String
+    password: String
+    list: [List]
 }
-type Query {
+type List {
+    title: String
+    score: Integer
+    status: String
+}
+type Game {
+    title: String
+    summary: String
+    img: String
+    info: [Info]
+    system_req: [System_req]
+}
+type Info {
+    developer: String
+    publisher: String
+    release_date: Date
+    genres: String
+    rating: String
+}
+type System_req {
+    os: String
+    processor: String
+    memory: String
+    graphics: String
+    storage: String
+}
+
+
+query getUserInfo { 
+    User {
+        username
+        list {
+            title
+            score
+            status
+        }
+    }
+}
+query getGameInfo {
+    Game {
+        title
+        summary
+        img
+        info {
+            developer
+            publisher
+            release_date
+            genres
+            rating
+        }
+        system_req {
+            os
+            processor
+            memory
+            graphics
+            storage
+        }
+    }
+}
+type Mutation {
+    addEntry {
+        addEntry(title:String)
+    }
+}
+mutation addEntry {
 
 }

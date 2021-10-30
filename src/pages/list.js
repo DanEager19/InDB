@@ -1,8 +1,8 @@
 import React from "react";
-import List_nav from "../components/list_nav";
-import List_entry from "../components/list_entry"
+import listNav from "../components/listNav";
+import listEntry from "../components/listEntry"
 
-function List() {
+function list() {
     return (
     <div className="flexWrap">
         <div className="flexCol1 usr">
@@ -10,10 +10,10 @@ function List() {
             <h5>User</h5>
         </div>
         <div className="flexCol2">
-        <List_nav></List_nav>
-        <List_entry></List_entry>
+        <listNav></listNav>
+        <listEntry></listEntry>
         </div>
     </div>
     );
 }
-export default List;
+export default list;

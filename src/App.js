@@ -11,11 +11,10 @@ import Navigation from "./components/navbar"
 import Footer from "./components/footer"
 
 //Pages
-import Add_entry from "./pages/add_entry"
-import List from "./pages/list"
-import Login from "./pages/login"
-import Home from './pages/home'
-import Info from './pages/info'
+import addEntry from "./pages/addEntry"
+import list from "./pages/list"
+import login from "./pages/login"
+import home from './pages/home'
 
 function App() {
     return(
@@ -23,10 +22,10 @@ function App() {
             <Router>
                 <Navigation></Navigation>
                 <Switch>
-                    <Route exact path='/' component={Home} />
-                    <Route exact path='/list' component={List} />
-                    <Route exact path='/login' component={Login} />
-                    <Route exact path='/add_entry' component={Add_entry} />
+                    <Route exact path='/' component={home} />
+                    <Route exact path='/list' component={list} />
+                    <Route exact path='/login' component={login} />
+                    <Route exact path='/addEntry' component={addEntry} />
                 </Switch>
             </Router>
             <Footer />

@@ -1,7 +1,7 @@
 import React from "react"
 import {Navbar, Nav} from "react-bootstrap"
 
-function List_entry() {
+function listEntry() {
     return (
         <div className="container">
             <Navbar className="list_header row">
@@ -12,4 +12,4 @@ function List_entry() {
         </div>
     );
 }
-export default List_entry;
+export default listEntry;

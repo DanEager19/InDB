@@ -62,11 +62,3 @@ query getGameInfo {
         }
     }
 }
-type Mutation {
-    addEntry {
-        addEntry(title:String)
-    }
-}
-mutation addEntry {
-
-}

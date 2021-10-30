@@ -1,5 +1,5 @@
 import React from "react";
-function Login() {
+function login() {
 return (
     <div className="form-group">
         <form action="." method="POST" id="login">
@@ -30,4 +30,4 @@ return (
     </div>
 );
 }
-export default Login;
+export default login;

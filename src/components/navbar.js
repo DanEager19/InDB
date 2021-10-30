@@ -21,7 +21,7 @@ function Navigation() {
                         <Nav.Link className="nav_word" href="#login">Login</Nav.Link>
                     </Link>
                     <Link to="add_entry" className="text_remove p-2" >
-                        <Nav.Link className="nav_word" href="#add_entry">Add Entry</Nav.Link>
+                        <Nav.Link className="nav_word" href="#addEntry">Add Entry</Nav.Link>
                     </Link>
                 </Nav>
             </Navbar.Collapse>

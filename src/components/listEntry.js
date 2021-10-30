@@ -11,7 +11,7 @@ class Game {
 
 let Hades = new Game("Hades", 9, "Completed")
 
-function List_nav() {
+function listNav() {
     return (
         <div className="container">
             <Navbar className="list_entry row">
@@ -22,4 +22,4 @@ function List_nav() {
         </div>
     );
 }
-export default List_nav;
+export default listNav;

@@ -13,7 +13,7 @@ type Game {
     summary: String
     img: String
     info: [Info]
-    system_req: [System_req]
+    systemReq: [SystemReq]
 }
 type Info {
     developer: String
@@ -22,7 +22,7 @@ type Info {
     genres: String
     rating: String
 }
-type System_req {
+type SystemReq {
     os: String
     processor: String
     memory: String

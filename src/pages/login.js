@@ -1,5 +1,5 @@
 import React from "react";
-function login() {
+function Login() {
 return (
     <div className="form-group">
         <form action="." method="POST" id="login">
@@ -8,16 +8,12 @@ return (
                     <div className="d-flex flex-column">
                         <div className="form-group p-2">
                             <label htmlFor="username">Username:</label>
-                        </div>
-                        <div className="form-group p-2">
-                            <label htmlFor="password">Password:</label>
-                        </div>
-                    </div>
-                    <div className="d-flex flex-column">
-                        <div className="form-group p-2">
+                            <br/>
                             <input type="text" placeholder="Username"/>
                         </div>
                         <div className="form-group p-2">
+                            <label htmlFor="password">Password:</label>
+                            <br />
                             <input type="password" placeholder="Password"/>
                         </div>
                     </div>
@@ -30,4 +26,4 @@ return (
     </div>
 );
 }
-export default login;
+export default Login;

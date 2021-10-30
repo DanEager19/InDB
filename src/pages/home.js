@@ -1,8 +1,8 @@
 import React from "react";
-function home() {
+function Home() {
     return (
     <div className="flexWrap">
     </div>
     );
 }
-export default home;
+export default Home;

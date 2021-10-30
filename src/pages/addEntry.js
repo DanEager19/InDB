@@ -1,5 +1,5 @@
 import React from "react";
-function addEntry() {
+function AddEntry() {
     return (
         <div className="container">
             <form action="." method="POST" id="login">
@@ -130,4 +130,4 @@ function addEntry() {
         </div>
     )
 }
-export default addEntry;
+export default AddEntry;

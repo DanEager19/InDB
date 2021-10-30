@@ -1,6 +1,6 @@
 import React from "react";
 
-function info() {
+function Info() {
     return (
         <div className="container flexWrap">
         <div className="flexCol1 centerTag">
@@ -63,4 +63,4 @@ function info() {
     </div>
     );
 }
-export default info;
+export default Info;

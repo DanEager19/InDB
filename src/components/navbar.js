@@ -20,7 +20,7 @@ function Navigation() {
                     <Link to="/login" className="text_remove p-2">                    
                         <Nav.Link className="nav_word" href="#login">Login</Nav.Link>
                     </Link>
-                    <Link to="add_entry" className="text_remove p-2" >
+                    <Link to="addEntry" className="text_remove p-2" >
                         <Nav.Link className="nav_word" href="#addEntry">Add Entry</Nav.Link>
                     </Link>
                 </Nav>

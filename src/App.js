@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import "./index.css"
 
 //Components
-import Navigation from "./components/navbar"
+import NavigationBar from "./components/navbar"
 import Footer from "./components/footer"
 
 //Pages
@@ -16,11 +16,12 @@ import List from "./pages/list"
 import Login from "./pages/login"
 import Home from './pages/home'
 
+
 function App() {
     return(
         <div>
             <Router>
-                <Navigation></Navigation>
+                <NavigationBar></NavigationBar>
                 <Switch>
                     <Route exact path='/' component={Home} />
                     <Route exact path='/list' component={List} />

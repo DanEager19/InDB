@@ -18,7 +18,7 @@ type Game {
 type Info {
     developer: String
     publisher: String
-    release_date: Date
+    releaseDate: Date
     genres: String
     rating: String
 }
@@ -30,6 +30,9 @@ type SystemReq {
     storage: String
 }
 
+type Query {
+    
+}
 
 query getUserInfo { 
     User {
@@ -49,7 +52,7 @@ query getGameInfo {
         info {
             developer
             publisher
-            release_date
+            releaseDate
             genres
             rating
         }

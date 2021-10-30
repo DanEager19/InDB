@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-function Navigation() {
+function NavigationBar() {
     return (
         <Navbar expand="lg" id="header">
             <Navbar.Brand href="#home">
@@ -29,4 +29,4 @@ function Navigation() {
     );
 }
 
-export default Navigation;
+export default NavigationBar;

@@ -1,4 +1,5 @@
 import React from "react";
+import Genres from "../components/addGenre";
 function AddEntry() {
     return (
         <div className="container">
@@ -119,8 +120,6 @@ function AddEntry() {
                                 </div>
                             </div>
                         </div>
-                        <br></br>
-                        <hr></hr>
                         <div className="d-flex justify-content-center">
                             <button type="submit" className="btn btn-primary">Submit</button>
                         </div>

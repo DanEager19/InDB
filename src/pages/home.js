@@ -1,8 +1,9 @@
 import React from "react";
+import ApiConnection from "../components/api";
+
 function Home() {
     return (
-    <div className="flexWrap">
-    </div>
-    );
+        <ApiConnection></ApiConnection>
+    )
 }
 export default Home;

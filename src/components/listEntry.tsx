@@ -1,8 +1,11 @@
-import React from "react"
+import * as React from "react"
 import {Navbar, Nav} from "react-bootstrap"
 
 class Game {
-    constructor(title, score, status) {
+    title: string; 
+    score: number; 
+    status: string;
+    constructor(title: string, score: number, status: string) {
         this.title = title;
         this.score = score;
         this.status = status;

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-
+import * as React from "react";
+import { Component } from "react"; 
 class ApiConnection extends Component {
     state = {
-        data: null
+        
     }
     componentDidMount() {
         this.callBackendAPI()
@@ -21,7 +21,7 @@ class ApiConnection extends Component {
     }
     render() {
         return (
-            <div>{this.state.data}</div>
+            <div>{this.state}</div>
         )
     }
 }

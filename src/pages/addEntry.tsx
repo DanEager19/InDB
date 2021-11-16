@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import Genres from "../components/addGenre";
 function AddEntry() {
     return (

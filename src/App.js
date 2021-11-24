@@ -1,6 +1,6 @@
 //Dependencies
 import React from 'react'
-import { Router, Routes, Route } from "react-router-dom"
+import { Router, Switch, Route } from "react-router-dom"
 
 //Stylesheets
 import 'bootstrap/dist/css/bootstrap.css'
@@ -22,12 +22,12 @@ function App() {
         <div>
             <Router>
                 <NavigationBar></NavigationBar>
-                <Routes>
+                <Switch>
                     <Route exact path='/' component={Home} />
                     <Route exact path='/list' component={List} />
                     <Route exact path='/login' component={Login} />
                     <Route exact path='/addEntry' component={AddEntry} />
-                </Routes>
+                </Switch>
             </Router>
             <Footer />
         </div>

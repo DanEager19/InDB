@@ -1,4 +1,4 @@
-import* as React from "react";
+import * as React from "react";
 const map = new Map();
 
 class Genres extends React.Component {

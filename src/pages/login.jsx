@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 function Login() {
 return (
     <div className="form-group">

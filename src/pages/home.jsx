@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import ApiConnection from "../components/api";
 
 function Home() {

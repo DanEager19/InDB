@@ -3,7 +3,7 @@ import Genres from "../components/addGenre";
 function AddEntry() {
     return (
         <div className="container">
-            <form action="." method="POST" id="login">
+            <form action="." method="POST">
                 <div className="row">
                     <div className="row">
                         <div className="row">

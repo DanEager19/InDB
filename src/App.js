@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 
 //Stylesheets
 import 'bootstrap/dist/css/bootstrap.css'
-import "./index.css"
+import "./styles.scss"
 
 //Components
 import NavigationBar from "./components/navbar"

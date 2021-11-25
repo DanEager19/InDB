@@ -64,9 +64,7 @@ $tinted-white: rgb(223, 223, 223);
         text-align: center;
     };
 }
-.centerTag {
-    text-align: center;
-}
+
 .desc {
     @include border(); 
     margin-top: 1em;
@@ -126,7 +124,7 @@ $tinted-white: rgb(223, 223, 223);
 }
 #header {
     color:$red-pink; 
-    background-color: rgb(175, 175, 175); 
+    background-color: $light-gray; 
     font-weight: 600;
     z-index: 1;
 }
@@ -138,10 +136,7 @@ $tinted-white: rgb(223, 223, 223);
 #footer {
     font-weight: 550;
 }
-#login > div {
-    text-align: center; 
-    margin-top: 1em, 0;
-}
+
 
 div {
     font-family: Arial, Helvetica, sans-serif; 

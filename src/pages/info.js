@@ -40,7 +40,7 @@ function Info() {
             <div className="container flexWrap flexCol4">
                 <div className="flexCol5 info">
                         <h4 className="centerTag">Info</h4>
-                        <ul>
+                        <ul style="list-style-type: none;">
                             <li id="dev"><b>Developer: </b> Supergiant Games</li>
                             <li id="pub"><b>Publisher: </b> Supergiant Games</li>
                             <li id="rel_date"><b>Release Date: </b> Sep 17, 2020</li>
@@ -50,7 +50,7 @@ function Info() {
                 </div>
                 <div className="flexCol5 info">
                     <h4 className="centerTag">System Requirements</h4>
-                    <ul>
+                    <ul style="list-style-type: none;">
                         <li id="os"><b>OS: </b>Windows 7 SP1</li>
                         <li id="cpu"><b>Processor: </b>Dual Core 2.4 GHz</li>
                         <li id="ram"><b>Memory: </b>4GB RAM</li>

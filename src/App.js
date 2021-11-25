@@ -1,10 +1,10 @@
 //Dependencies
 import React from 'react'
-import { Router, Switch, Route } from "react-router-dom"
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 
 //Stylesheets
 import 'bootstrap/dist/css/bootstrap.css'
-import "./styles.scss"
+import "./index.css"
 
 //Components
 import NavigationBar from "./components/navbar"

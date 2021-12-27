@@ -1,4 +1,7 @@
-const mongoose = require('mongoose'), Game = mongoose.model('Games');
+'use strict'
+
+const mongoose = require('mongoose'), 
+Game = mongoose.model('Games');
 
 exports.listAllGames = (req, res) => {
     Game.find({}, (err, game) =>{

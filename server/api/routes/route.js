@@ -7,8 +7,8 @@ module.exports = (app) => {
         .get(List.listAllGames)
         .post(List.createGame);
 
-    app.route('/games/:gameId')
-        .get(List.listGameInfo)
+    app.route('/:title')
+        .get(List.findByTitle)
         .put(List.updateGame)
         .delete(List.removeGame);
 }

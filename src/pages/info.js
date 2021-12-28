@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function Info() {
+    const [json, setJson] = useState({});
+
+    const getJSON = async () => {
+        const res = await fetch("http://localhost:5000/Hades");
+        const data = await res.json();
+        setJson(data);
+    };
+
+    useEffect(() => {
+        getJSON();
+    }, []);
+    const data = JSON.stringify(json)
     return (
         <div className="container flexWrap">
         <div className="flexCol1 centerTag">
             <h1>Hades</h1>
-            <img id="cover" src="/images/Hades_cover_art.jpg"/>
+            <img id="cover" src="/images/hades_cover.jpg"/>
 
             <form action="." method="POST" id="status">
                 <select name="game_status">
-                    <option value="default_status"></option>
+                    <option value="default_status">Yup</option>
                     <option value="playing">Playing</option>
                     <option value="finished">Finished</option>
                     <option value="completed">Completed</option>
@@ -35,13 +47,13 @@ function Info() {
         <div className="flexCol2">
             <div className="flexCol3 desc">
                 <h4 className="centerTag">Summary</h4>
-                <p id="summary" className="centerTag"></p>
+                <p id="summary" className="centerTag">{data}</p>
             </div>
             <div className="container flexWrap flexCol4">
                 <div className="flexCol5 info">
                         <h4 className="centerTag">Info</h4>
-                        <ul style="list-style-type: none;">
-                            <li id="dev"><b>Developer: </b> Supergiant Games</li>
+                        <ul>
+                            <li id="dev"><b>Developer: </b></li>
                             <li id="pub"><b>Publisher: </b> Supergiant Games</li>
                             <li id="rel_date"><b>Release Date: </b> Sep 17, 2020</li>
                             <li id="genres"><b>Genres: </b>Action, Roguelike, Dungeon Crawler</li>
@@ -50,7 +62,7 @@ function Info() {
                 </div>
                 <div className="flexCol5 info">
                     <h4 className="centerTag">System Requirements</h4>
-                    <ul style="list-style-type: none;">
+                    <ul>
                         <li id="os"><b>OS: </b>Windows 7 SP1</li>
                         <li id="cpu"><b>Processor: </b>Dual Core 2.4 GHz</li>
                         <li id="ram"><b>Memory: </b>4GB RAM</li>

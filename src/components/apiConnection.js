@@ -4,9 +4,9 @@ export default function ApiConnection() {
     const [json, setJson] = useState({});
 
     const getJSON = async () => {
-    const res = await fetch("http://localhost:5000/games");
-    const data = await res.json();
-    setJson(data);
+        const res = await fetch("http://localhost:5000/games/6169d3364ed6a95733f872ba");
+        const data = await res.json();
+        setJson(data);
     };
 
     useEffect(() => {

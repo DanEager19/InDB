@@ -11,7 +11,7 @@ import NavigationBar from "./components/navbar"
 import Footer from "./components/footer"
 
 //Pages
-import AddEntry from "./pages/addEntry"
+import Create from "./pages/create"
 import List from "./pages/list"
 import Login from "./pages/login"
 import Home from './pages/home'
@@ -26,7 +26,7 @@ function App() {
                     <Route exact path='/' component={Home} />
                     <Route exact path='/list' component={List} />
                     <Route exact path='/login' component={Login} />
-                    <Route exact path='/addEntry' component={AddEntry} />
+                    <Route exact path='/addEntry' component={Create} />
                 </Switch>
             </Router>
             <Footer />

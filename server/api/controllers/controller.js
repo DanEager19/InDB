@@ -17,11 +17,21 @@ exports.createGame = (req, res) => {
         if (err)
             res.send(err);
         res.json(game);
+        console.log('Created new entry')
     });
 };
 
 exports.listGameInfo = (req, res) => {
     Game.findById(req.params.gameId, (err, game) => {
+        if (err)
+            res.send(err);
+        res.json(game);
+    });
+};
+
+//Probably useless
+exports.findByTitle = (req, res) => {
+    Game.find({title: req.params.title}, (err, game) => {
         if (err)
             res.send(err);
         res.json(game);

@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const GameSchema = new Schema ({
-    title: { type: String }, 
+    title: {type: String }, 
     summary: { type: String },
     dev: { type: String },
     pub: { type: String }, 

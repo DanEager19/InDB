@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-export default function AddEntryForm() {
+export default function CreateForm() {
     const [inputs, setInputs] = useState({});
 
     const handleChange = (event) => {    
@@ -17,19 +17,13 @@ export default function AddEntryForm() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(inputs)
         }
-        fetch(url, requestOptions).then(function (res) {
-            if (res.ok) {
-              alert("Perfect! ");
-            } else if (res.status == 401) {
-              alert("Oops! ");
-            }
-          }, function (e) {
-            alert("Error submitting form!");
-          })
+        fetch(url, requestOptions)
+        .then(response => console.log('Submitted successfully'))
+        .catch(error => console.log('Form submit error', error))
     };
     return (
         <div className="container">
-        <form onSubmit={handleSubmit} method="POST">
+        <form onSubmit={handleSubmit} method="POST" action="./">
             <div className="row">
                 <div className="row">
                     <div className="row">

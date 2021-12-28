@@ -3,7 +3,7 @@ app = express()
 port = process.env.PORT || 5000
 mongoose = require('mongoose')
 //remove hard coded password
-const uri = 'mongodb+srv://daniel:[Password]]@cluster0.xcoys.mongodb.net/index?retryWrites=true&w=majority'
+const uri = 'mongodb+srv://daniel:G9l$23mo0@cluster0.xcoys.mongodb.net/index?retryWrites=true&w=majority'
 Game = require('./api/models/model')
 
 mongoose.connect(uri, {

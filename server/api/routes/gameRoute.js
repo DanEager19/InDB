@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = (app) => {
-    const List = require('../controllers/controller');
+    const List = require('../controllers/gameController');
 
     app.route('/games')
         .get(List.listAllGames)

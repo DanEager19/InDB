@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
-const title = 'Hades'
-function Info() {
-    const [json, setJson] = useState([]);
+import {useParams} from 'react-router-dom';
 
+function Info() {
+    //const {title} = useParams()
+    const title = 'Hollow_Knight'
+    
+    const [json, setJson] = useState([]);
     const getJSON = async () => {
         const response = await fetch(`http://localhost:5000/${title}`)
         const data = await response.json();
@@ -20,7 +23,7 @@ function Info() {
                     <div className="container flexWrap" key={item.id}>
                         <div className="flexCol1 centerTag">
                             <h1>{item.title.replace(/_/g, ' ')}</h1>
-                            <img id="cover" src={item.img}/>
+                            <img id="cover" src={'images/' + item.img}/>
                             <form action="." method="POST" id="status">
                                 <select name="game_status">
                                     <option value="default_status">Yup</option>

@@ -1,10 +1,10 @@
 const auth = require('../cred.json'); 
 const express = require('express');
 app = express()
-port = process.env.PORT || 5000
+port = process.env.PORT || 1000
 mongoose = require('mongoose')
-const uri = `mongodb+srv://${auth.user}:${auth.password}@cluster0.xcoys.mongodb.net/index?retryWrites=true&w=majority`
-Game = require('./api/models/gameModel')
+const uri = `mongodb+srv://${auth.user}:${auth.password}@cluster0.xcoys.mongodb.net/users?retryWrites=true&w=majority`
+Game = require('./api/models/listModel')
 
 mongoose.connect(uri, {
     useNewUrlParser: true,
@@ -18,7 +18,7 @@ mongoose.connect(uri, {
 app.use(express.urlencoded({extended: true}))
 app.use(express.json());
 
-const routes = require('./api/routes/gameRoute');
+const routes = require('./api/routes/listRoute');
 
 routes(app);
 
@@ -27,4 +27,4 @@ app.get('*', (req, res) => {
 })
 
 app.listen(port);
-console.log('Game list RESTful API started on port: ' + port);
+console.log('list RESTful API started on port: ' + port);

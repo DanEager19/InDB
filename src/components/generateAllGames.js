@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, Route, Switch } from "react-router-dom";
-import Info from "../pages/info";
 import { BrowserRouter } from "react-router-dom";
+import Info from "../pages/info";
 
 export default function GenerateAllGames() {
     const [json, setJson] = useState([]);
@@ -20,11 +20,10 @@ export default function GenerateAllGames() {
                 json.map((item) => (
                     <BrowserRouter key={item.id}>
                         <ul>
-                            <Link to={item.title}>{item.title}</Link>
+                            <Link to={'/info/' + item.title}>{item.title}</Link>
                         </ul>
                         <Switch>
-                            <Route path={item.title}>
-                                
+                            <Route path={'/info/' + item.title} component={Info}>
                             </Route>
                         </Switch>
                     </BrowserRouter>

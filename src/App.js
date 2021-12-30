@@ -15,6 +15,7 @@ import Create from "./pages/create"
 import List from "./pages/list"
 import Login from "./pages/login"
 import Home from './pages/home'
+import Info from './pages/info'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
                 <NavigationBar></NavigationBar>
                 <Switch>
                     <Route exact path='/' component={Home} />
+                    <Route exact path='/info/:title' component={Info} />
                     <Route exact path='/list' component={List} />
                     <Route exact path='/login' component={Login} />
                     <Route exact path='/addEntry' component={Create} />

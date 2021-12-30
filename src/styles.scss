@@ -71,10 +71,12 @@ $light-black: rgb(48, 48, 48);
 .desc {
     @include border(); 
     margin-top: 1em;
+    color: black; 
     background-color: white;
 }
 .info {
-    @include border(); 
+    @include border();
+    color: black; 
     margin: 0.5em, 0.5em;
     background-color: white;
 }

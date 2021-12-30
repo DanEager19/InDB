@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { APIConnection } from "../functions/apiConnection";
 
-export default function DisplayGameInfo() {
+function DisplayGameInfo() {
     
     const { title } = useParams();
     const json = APIConnection(5000, title);
@@ -50,3 +50,5 @@ export default function DisplayGameInfo() {
         </div>
     );
 }
+
+export default DisplayGameInfo

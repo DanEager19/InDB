@@ -6,7 +6,7 @@ function NavigationBar() {
     return (
         <Navbar expand="lg" id="header">
             <Navbar.Brand href="#home">
-                <img alt="Logo" id="logo" src="/images/logo.png"/>
+                <img alt="Logo" id="logo" src="../images/logo.png"/>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="navbar">

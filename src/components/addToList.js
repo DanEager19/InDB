@@ -1,12 +1,15 @@
 import React from "react";
 
-export default function AddEntry() {
-
+function AddEntry() {
+    
     return (
         <div>
             <form action="." method="POST" id="status">
+                <button className="btn btn-secondary dropdown-toggle" type="button">
+                    Dropdown button
+                </button>
                 <select name="game_status">
-                    <option value="default_status">Yup</option>
+                    <option value="default_status"></option>
                     <option value="playing">Playing</option>
                     <option value="finished">Finished</option>
                     <option value="completed">Completed</option>
@@ -31,3 +34,5 @@ export default function AddEntry() {
         </div>
     )
 }
+
+export default AddEntry

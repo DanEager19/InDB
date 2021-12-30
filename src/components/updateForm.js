@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-export default function CreateForm(title) {
+function UpdateForm(title) {
     const [inputs, setInputs] = useState({});
 
     const handleChange = (event) => {    
@@ -149,3 +149,5 @@ export default function CreateForm(title) {
         </div>
     )
 }
+
+export default UpdateForm

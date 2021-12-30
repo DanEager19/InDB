@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { APIConnection } from "../functions/apiConnection";
 
-export default function GenerateAllGames() {
+function GenerateAllGames() {
     const json = APIConnection(5000, 'games');
     return (
         <div className="flexWrap">
@@ -18,3 +18,5 @@ export default function GenerateAllGames() {
         </div>
     );
 }
+
+export default GenerateAllGames

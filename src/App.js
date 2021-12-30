@@ -28,7 +28,7 @@ function App() {
                     <Route exact path='/info/:title' component={Info} />
                     <Route exact path='/list' component={List} />
                     <Route exact path='/login' component={Login} />
-                    <Route exact path='/addEntry' component={Create} />
+                    <Route exact path='/createEntry' component={Create} />
                 </Switch>
             </Router>
             <Footer />

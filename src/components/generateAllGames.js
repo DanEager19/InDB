@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, Route, Switch } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
-import Info from "../pages/info";
+import { Link } from "react-router-dom";
 
 export default function GenerateAllGames() {
     const [json, setJson] = useState([]);
@@ -15,18 +13,14 @@ export default function GenerateAllGames() {
        getJSON();
     }, []);
     return (
-        <div>
+        <div className="flexWrap">
             {
                 json.map((item) => (
-                    <BrowserRouter key={item.id}>
-                        <ul>
-                            <Link to={'/info/' + item.title}>{item.title}</Link>
-                        </ul>
-                        <Switch>
-                            <Route path={'/info/' + item.title} component={Info}>
-                            </Route>
-                        </Switch>
-                    </BrowserRouter>
+                        <div className="flexCol7" key={item.id}>
+                            <Link to={'/info/' + item.title} >
+                                <img id="cover" src={`../images/${item.img}`}/>
+                            </Link>
+                        </div>
                 ))
             }
         </div>

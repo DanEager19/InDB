@@ -32,9 +32,12 @@ $light-black: rgb(48, 48, 48);
 } .flexCol5 {
     @include box-shadow();
     @include flex(10px, 75%, 100%); 
-}.flexCol6 {
+} .flexCol6 {
     @include flex(10px, 100%, 33%); 
-} 
+} .flexCol7 {
+    @include flex(10px, 20%, 100%)
+}
+
 .text_remove {
     text-decoration: none; 
     color: $red-pink; 

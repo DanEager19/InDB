@@ -1,18 +1,10 @@
 
 import {Navbar, Nav} from "react-bootstrap"
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { APIConnection } from "../functions/apiConnection";
 
 function ListEntry() {
-    const [json, setJson] = useState([]);
-    const getJSON = async () => {
-        const response = await fetch('http://localhost:5001/userDB')
-        const data = await response.json();
-        setJson(data);
-    };
-
-    useEffect(() => {
-       getJSON();
-    }, []);
+    const json = APIConnection(5001, 'userDB')
     return (
         <div className="container">
              {

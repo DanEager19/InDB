@@ -1,17 +1,11 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
-export default function DisplayGameInfo() {
-    const { title } = useParams();
-    const [json, setJson] = useState([]);
-    const getJSON = async () => {
-        const response = await fetch(`http://localhost:5000/${title}`)
-        const data = await response.json();
-        setJson(data);
-    };
+import { APIConnection } from "../functions/apiConnection";
 
-    useEffect(() => {
-       getJSON();
-    }, []);
+export default function DisplayGameInfo() {
+    
+    const { title } = useParams();
+    const json = APIConnection(5000, title);
 
     return (
         <div>

@@ -20,7 +20,7 @@ function NavigationBar() {
                     <Link to="/login" className="text_remove p-2">                    
                         <Nav.Link className="nav_word" href="#login">Login</Nav.Link>
                     </Link>
-                    <Link to="createEntry" className="text_remove p-2" >
+                    <Link to="/createEntry" className="text_remove p-2" >
                         <Nav.Link className="nav_word" href="#createEntry">Create Entry</Nav.Link>
                     </Link>
                 </Nav>

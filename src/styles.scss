@@ -28,7 +28,7 @@ $light-black: rgb(48, 48, 48);
     @include box-shadow();
     @include flex(10px, 100%, 33%); 
 } .flexCol4{
-    @include flex(10px, 100%, 66%); 
+    @include flex(5px, 100%, 66%); 
 } .flexCol5 {
     @include box-shadow();
     @include flex(10px, 75%, 100%); 
@@ -57,7 +57,7 @@ $light-black: rgb(48, 48, 48);
     transition: background-color 0.5s; 
     border-radius: 5px;
     &:hover {
-        background-color: $red-pink; 
+        background-color: rgba(73, 73, 73, 1);
         cursor: pointer;
     };
     h6 {
@@ -72,7 +72,7 @@ $light-black: rgb(48, 48, 48);
 }
 .info {
     @include border(); 
-    margin:1em, 0.5em, 0; 
+    margin: 0.5em, 0.5em;
     background-color: white;
 }
 .modal {display: none; 

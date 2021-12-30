@@ -3,7 +3,6 @@ import { Link, Route, Switch } from "react-router-dom";
 import Info from "../pages/info";
 import { BrowserRouter } from "react-router-dom";
 
-
 export default function GenerateAllGames() {
     const [json, setJson] = useState([]);
     const getJSON = async () => {
@@ -21,11 +20,11 @@ export default function GenerateAllGames() {
                 json.map((item) => (
                     <BrowserRouter key={item.id}>
                         <ul>
-                            <Link to={"/info/" + item.title}>{item.title}</Link>
+                            <Link to={item.title}>{item.title}</Link>
                         </ul>
                         <Switch>
-                            <Route path="/info/:title">
-                                <Info/>
+                            <Route path={item.title}>
+                                
                             </Route>
                         </Switch>
                     </BrowserRouter>

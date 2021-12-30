@@ -1,24 +1,28 @@
-import React from "react"
+
 import {Navbar, Nav} from "react-bootstrap"
-
-class Game {
-    constructor(title, score, status) {
-        this.title = title;
-        this.score = score;
-        this.status = status;
-    }
-}
-
-let Hades = new Game("Hades", 9, "Completed")
+import React, { useEffect, useState } from "react";
 
 function ListEntry() {
+    const [json, setJson] = useState([]);
+    const getJSON = async () => {
+        const response = await fetch('http://localhost:5001/userDB')
+        const data = await response.json();
+        setJson(data);
+    };
+
+    useEffect(() => {
+       getJSON();
+    }, []);
     return (
         <div className="container">
-            <Navbar className="list_entry row">
-                <Nav className="col p-2 mx-3">{Hades.title}</Nav>
-                <Nav className="col p-2 mx-3">{Hades.score}</Nav>
-                <Nav className="col p-2 mx-3">{Hades.status}</Nav>
-            </Navbar>
+             {
+                json.map((item) => (
+                    <Navbar className="list_entry row" key={item.id}>
+                        <Nav className="col p-2 mx-3">{item.entry}</Nav>
+                        <Nav className="col p-2 mx-3">{item.score}</Nav>
+                        <Nav className="col p-2 mx-3">{item.status}</Nav>
+                    </Navbar>
+                ))}
         </div>
     );
 }

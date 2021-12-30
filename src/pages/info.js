@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import {useParams} from 'react-router-dom';
 
 function Info() {
-    //const {title} = useParams()
-    const title = 'Hollow_Knight'
+    const title = 'Hades'
     
     const [json, setJson] = useState([]);
     const getJSON = async () => {

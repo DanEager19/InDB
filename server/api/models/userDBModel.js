@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const ListSchema = new Schema ({
+const userDBSchema = new Schema ({
     entry: {
         type: String
     },
@@ -18,4 +18,4 @@ const ListSchema = new Schema ({
     }
 });
 
-module.exports = mongoose.model('List', ListSchema);
+module.exports = mongoose.model('userDB', userDBSchema);

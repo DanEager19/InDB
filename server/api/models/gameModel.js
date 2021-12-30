@@ -17,20 +17,4 @@ const GameSchema = new Schema ({
     storage: { type: String }
 });
 
-const ListSchema = new Schema ({
-    title: {
-        type: String
-    },
-    score: {
-        type: Number
-        //Should restrict to a number between 1-10
-    },
-    status: {
-        type: [{
-            type: String,
-            enum: ['Playing', 'Finished', 'Completed', 'Paused', 'Dropped', 'Wishlisted']
-        }]
-    }
-});
-
 module.exports = mongoose.model('Games', GameSchema);

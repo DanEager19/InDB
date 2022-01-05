@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { APIConnection } from "../functions/apiConnection";
+import AddEntry from "./addToList";
 
 function DisplayGameInfo() {
     
@@ -15,6 +16,7 @@ function DisplayGameInfo() {
                         <div className="flexCol1 centerTag">
                             <h1>{item.title.replace(/_/g, ' ')}</h1>
                             <img id="cover" src={`../images/${item.img}`}/>
+                            <AddEntry />
                         </div>
                         <div className="flexCol2">
                             <div className="flexCol3 desc">

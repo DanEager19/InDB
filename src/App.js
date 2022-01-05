@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 
 //Stylesheets
 import 'bootstrap/dist/css/bootstrap.css'
+import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 import "./styles.scss"
 
 //Components

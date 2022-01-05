@@ -1,9 +1,11 @@
 import React from "react";
 import CreateForm from "../components/createForm";
+import UpdateForm from "../components/updateForm";
 
 function Create() {
     return(
-        <CreateForm></CreateForm>
+        <UpdateForm />
+        //<CreateForm />
     )
 }
 

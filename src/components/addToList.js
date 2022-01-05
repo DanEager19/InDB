@@ -1,35 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
+import {Dropdown, Form} from "react-bootstrap"
+import RangeSlider from 'react-bootstrap-range-slider';
 
 function AddEntry() {
-    
+    const [score, setScore] = useState(5);
+
+    const [inputs, setInputs] = useState({});
+
+    const handleChange = (event) => {    
+        const name = event.target.name;
+        const value = event.target.value;
+        setInputs(values => ({...values, [name]: value}))
+    }
+    const handleSubmit = (event) => {
+        event.preventDefault()
+
+        const url = `http://localhost:5001/userdb/${title}`
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(inputs)
+        }
+        fetch(url, requestOptions)
+        .then(response => console.log('Submitted successfully'))
+        .catch(error => console.log('Form submit error', error))
+    };
+    //Change status button based on descicions 
     return (
         <div>
-            <form action="." method="POST" id="status">
-                <button className="btn btn-secondary dropdown-toggle" type="button">
-                    Dropdown button
-                </button>
-                <select name="game_status">
-                    <option value="default_status"></option>
-                    <option value="playing">Playing</option>
-                    <option value="finished">Finished</option>
-                    <option value="completed">Completed</option>
-                    <option value="paused">Paused</option>
-                    <option value="dropped">Dropped</option>
-                    <option value="wishlisted">Wishlisted</option>
-                </select>
-                <select name="game_score">
-                    <option value="default_score"></option>
-                    <option value="score_10">10</option>
-                    <option value="score_9">9</option>
-                    <option value="score_8">8</option>
-                    <option value="score_7">7</option>
-                    <option value="score_6">6</option>
-                    <option value="score_5">5</option>
-                    <option value="score_4">4</option>
-                    <option value="score_3">3</option>
-                    <option value="score_2">2</option>
-                    <option value="score_1">1</option>
-                </select>
+            <form action="." method="POST" className="text-center">
+                <Dropdown id="status">
+                    <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                        Status
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                        <Dropdown.Item href="#">Playing</Dropdown.Item>
+                        <Dropdown.Item href="#">Finished</Dropdown.Item>
+                        <Dropdown.Item href="#">Paused</Dropdown.Item>
+                        <Dropdown.Item href="#">Dropped</Dropdown.Item>
+                        <Dropdown.Item href="#">Wishlisted</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+                <Form.Label>Score: {score}</Form.Label>
+                <RangeSlider 
+                    tooltip="off"
+                    onChange={e => setScore(e.target.value)}
+                    min={0}
+                    max={10}
+                />
             </form>
         </div>
     )

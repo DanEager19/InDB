@@ -141,7 +141,7 @@ function CreateForm() {
                         </div>
                     </div>
                     <div className="d-flex justify-content-center">
-                        <button type="submit" className="btn btn-primary" value="Submit">Submit</button>
+                        <button type="submit" className="btn btn-primary" value="Submit">Create</button>
                     </div>
                 </div>
             </div>

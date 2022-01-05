@@ -2,3 +2,4 @@ node_modules
 cred.json
 *.jpg
 package-lock.json
+build

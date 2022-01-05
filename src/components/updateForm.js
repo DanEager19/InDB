@@ -14,9 +14,9 @@ function UpdateForm() {
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        const url = `http://localhost:5000/games/${title}`
+        const url = `http://localhost:5000/update/${title}`
         const requestOptions = {
-            method: 'PUT',
+            method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(inputs)
         }
@@ -27,7 +27,7 @@ function UpdateForm() {
     return (
         <div className="container">
 {            json.map((item) => (
-        <form onSubmit={handleSubmit} method="PUT" action="./" key={item.id}>
+        <form onSubmit={handleSubmit} method="POST" action="./" key={item.id}>
             <div className="row">
                 <div className="row">
                     <div className="row">
@@ -40,7 +40,7 @@ function UpdateForm() {
                                 <label htmlFor="title">Title:</label>
                             </div>
                             <div className="col p-2">
-                                <input type="text" id="title" name="title" value={inputs.title || item.title} onChange={handleChange}/>
+                                <input type="text" id="title" name="title" value={inputs.title || item.title}/>
                             </div>
                         </div>
                         <div className="row">
@@ -62,7 +62,7 @@ function UpdateForm() {
                                 <label htmlFor="dev">Developer:</label>
                             </div>
                             <div className="col p-2">
-                                <input type="text" id="dev" name="dev" value={inputs.dev || item.developer} onChange={handleChange}/>
+                                <input type="text" id="dev" name="dev" value={inputs.dev || item.dev} onChange={handleChange}/>
                             </div>
                         </div>
                         <div className="row">
@@ -70,7 +70,7 @@ function UpdateForm() {
                                 <label htmlFor="pub">Publisher:</label>
                             </div>
                             <div className="col p-2">
-                                <input type="text" id="pub" name="pub" value={inputs.pub || item.publisher} onChange={handleChange}/>
+                                <input type="text" id="pub" name="pub" value={inputs.pub || item.pub} onChange={handleChange}/>
                             </div>
                         </div>
                         <div className="row">
@@ -78,7 +78,7 @@ function UpdateForm() {
                                 <label htmlFor="date">Release Date:</label>
                             </div>
                             <div className="col p-2">
-                                <input type="date" id="date" name="date" value={inputs.date || item.release_date} onChange={handleChange}/>
+                                <input type="date" id="date" name="date" value={inputs.date || item.date} onChange={handleChange}/>
                             </div>
                         </div>
                         <div className="row">
@@ -108,7 +108,7 @@ function UpdateForm() {
                                 <label htmlFor="cpu">Processor:</label>
                             </div>
                             <div className="col p-2">
-                                <input type="text" id="cpu" name="cpu" value={inputs.cpu || item.processor} onChange={handleChange}/>
+                                <input type="text" id="cpu" name="cpu" value={inputs.cpu || item.cpu} onChange={handleChange}/>
                             </div>
                         </div>
                         <div className="row">
@@ -116,7 +116,7 @@ function UpdateForm() {
                                 <label htmlFor="ram">Memory:</label>
                             </div>
                             <div className="col p-2">
-                                <input type="text" id="ram" name="ram" value={inputs.ram || item.memory} onChange={handleChange}/>
+                                <input type="text" id="ram" name="ram" value={inputs.ram || item.ram} onChange={handleChange}/>
                             </div>
                         </div>
                         <div className="row">
@@ -124,7 +124,7 @@ function UpdateForm() {
                                 <label htmlFor="gpu">Graphics:</label>
                             </div>
                             <div className="col p-2">
-                                <input type="text" id="gpu" name="gpu" value={inputs.gpu || item.graphics} onChange={handleChange}/>
+                                <input type="text" id="gpu" name="gpu" value={inputs.gpu || item.gpu} onChange={handleChange}/>
                             </div>
                         </div>
                         <div className="row">

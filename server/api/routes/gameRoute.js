@@ -11,4 +11,7 @@ module.exports = (app) => {
         .get(List.findByTitle)
         .put(List.updateGame)
         .delete(List.removeGame);
+
+    app.route('/update/:title')
+        .post(List.updateGame)
 }

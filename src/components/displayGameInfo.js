@@ -27,9 +27,9 @@ function DisplayGameInfo() {
                                 <div className="flexCol5 info">
                                     <h4 className="centerTag">Info</h4>
                                     <ul>
-                                        <li id="dev"><b>Developer: </b>{item.developer}</li>
-                                        <li id="pub"><b>Publisher: </b> {item.publisher}</li>
-                                        <li id="rel_date"><b>Release Date: </b> {item.release_date.slice(0, item.release_date.lastIndexOf('T'))}</li>
+                                        <li id="dev"><b>Developer: </b>{item.dev}</li>
+                                        <li id="pub"><b>Publisher: </b> {item.pub}</li>
+                                        <li id="date"><b>Release Date: </b> {item.date.slice(0, item.date.lastIndexOf('T'))}</li>
                                         <li id="rating"><b>Rating: </b>{item.rating}</li>
                                     </ul>
                                 </div>
@@ -37,9 +37,9 @@ function DisplayGameInfo() {
                                     <h4 className="centerTag">System Requirements</h4>
                                     <ul>
                                         <li id="os"><b>OS: </b>{item.os}</li>
-                                        <li id="cpu"><b>Processor: </b>{item.processor}</li>
-                                        <li id="ram"><b>Memory: </b>{item.memory}</li>
-                                        <li id="gpu"><b>Graphics: </b>{item.graphics}</li>
+                                        <li id="cpu"><b>Processor: </b>{item.cpu}</li>
+                                        <li id="ram"><b>Memory: </b>{item.ram}</li>
+                                        <li id="gpu"><b>Graphics: </b>{item.gpu}</li>
                                         <li id="storage"><b>Storage: </b>{item.storage}</li>
                                     </ul>
                                 </div>

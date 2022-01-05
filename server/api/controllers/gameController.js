@@ -39,12 +39,13 @@ exports.findByTitle = (req, res) => {
 };
 
 exports.updateGame = (req, res) => {
-    Game.findOneAndUpdate({_id:req.params.gameId}, req.body, {new:true}, 
+    Game.findOneAndUpdate({title:req.params.title}, req.body, {new:true}, 
         (err, game) => {
             if (err)
                 res.send(err);
             res.json(game);
         });
+        console.log('Updated entry')
 };
 
 exports.removeGame = (req, res) => {

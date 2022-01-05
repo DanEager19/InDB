@@ -30,7 +30,6 @@ function DisplayGameInfo() {
                                         <li id="dev"><b>Developer: </b>{item.developer}</li>
                                         <li id="pub"><b>Publisher: </b> {item.publisher}</li>
                                         <li id="rel_date"><b>Release Date: </b> {item.release_date.slice(0, item.release_date.lastIndexOf('T'))}</li>
-                                        <li id="genres"><b>Genres: </b>Action, Roguelike, Dungeon Crawler</li>
                                         <li id="rating"><b>Rating: </b>{item.rating}</li>
                                     </ul>
                                 </div>

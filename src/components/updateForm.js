@@ -83,14 +83,6 @@ function UpdateForm() {
                         </div>
                         <div className="row">
                             <div className="col-3 p-2">
-                                <label htmlFor="genres">Genres:</label>
-                            </div>
-                            <div className="col p-2">
-                                <input type="text" id="genres" name="genres" value={inputs.genres || ""} onChange={handleChange}/>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-3 p-2">
                                 <label htmlFor="rating">Rating:</label>
                             </div>
                             <div className="col p-2">

@@ -3,11 +3,7 @@
 
 name: Node.js CI
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push]
 
 jobs:
   build:
@@ -26,6 +22,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: cd server && npm run build
-    - run: cd web && npm start
+    - run: |
+        npm ci
+        cd server && npm run build
+        cd web && npm start
+      env:
+        CI: true

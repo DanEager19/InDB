@@ -1,4 +1,5 @@
 node_modules
 cred.json
+package-lock.json
 *.jpg
 build

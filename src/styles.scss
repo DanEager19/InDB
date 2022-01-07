@@ -35,7 +35,7 @@ $light-black: rgb(48, 48, 48);
 } .flexCol6 {
     @include flex(10px, 100%, 33%); 
 } .flexCol7 {
-    @include flex(10px, 20%, 100%)
+    @include flex(10px, 13%, 100%)
 }
 
 .text_remove {

@@ -18,6 +18,7 @@ import Login from "./pages/login"
 import Home from './pages/home'
 import Info from './pages/info'
 import About from './pages/about'
+import Update from './pages/update'
 
 function App() {
     return(
@@ -29,7 +30,8 @@ function App() {
                     <Route exact path='/info/:title' component={Info} />
                     <Route exact path='/list' component={List} />
                     <Route exact path='/login' component={Login} />
-                    <Route exact path='/createEntry' component={Create} />
+                    <Route exact path='/create' component={Create} />
+                    <Route exact path='/update' component={Update} />
                     <Route exact path='/about' component={About}/>
                 </Switch>
                 <Footer />

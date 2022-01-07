@@ -21,6 +21,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+          cache-dependency-path: server/package.json
       - run: cd server
       - run: npm install
       - run: npm run build

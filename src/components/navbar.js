@@ -23,9 +23,6 @@ function NavigationBar() {
                     <Link to="/create" className="text_remove p-2" >
                         <Nav.Link className="nav_word" href="#create">Create</Nav.Link>
                     </Link>
-                    <Link to="/update" className="text_remove p-2" >
-                        <Nav.Link className="nav_word" href="#update">Update</Nav.Link>
-                    </Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import {APIConnection} from "../functions/apiConnection"
+import { useParams } from "react-router-dom";
 
 function UpdateForm() {
-    const title = 'Hades';
+    const { title } = useParams();
     const json = APIConnection(5000, title);
     const [inputs, setInputs] = useState({});
 
@@ -46,9 +47,6 @@ function UpdateForm() {
                         <div className="row">
                             <div className="col-3 p-2">
                                 <label htmlFor="summary">Summary:</label>
-                            </div>
-                            <div className="col p-2">
-                                <textarea id="summary" rows="4" cols="40" name="summary" value={inputs.summary || item.summary} onChange={handleChange}></textarea>
                             </div>
                         </div>
                     </div>

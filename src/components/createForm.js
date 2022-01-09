@@ -1,6 +1,4 @@
 import React, {useState} from "react";
-//Maybe don't use this 
-import ImageUpload from "./uploadImage";
 
 function CreateForm() {
     const [inputs, setInputs] = useState({});
@@ -48,9 +46,6 @@ function CreateForm() {
                             <div className="col p-2">
                                 <textarea id="summary" rows="4" cols="40" name="summary" value={inputs.summary || ""} onChange={handleChange}></textarea>
                             </div>
-                        </div>
-                        <div className="col p-2">
-                            <ImageUpload />
                         </div>
                     </div>
                     <div className="col">

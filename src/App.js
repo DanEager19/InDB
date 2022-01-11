@@ -31,7 +31,7 @@ function App() {
                     <Route exact path='/list' component={List} />
                     <Route exact path='/login' component={Login} />
                     <Route exact path='/create' component={Create} />
-                    <Route exact path='/info/update/:title' component={Update} />
+                    <Route exact path='/~info/update/:title' component={Update} />
                     <Route exact path='/about' component={About}/>
                 </Switch>
                 <Footer />

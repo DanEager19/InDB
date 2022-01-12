@@ -15,5 +15,3 @@ RUN rm -rf ./*
 COPY --from=builder $HOME/in-db/app/build .
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
-
-EXPOSE 8080:80

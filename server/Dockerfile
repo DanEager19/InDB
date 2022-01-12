@@ -4,6 +4,6 @@ WORKDIR $HOME/in-db/server
 
 COPY . .
 
-EXPOSE 5000
+RUN npm install
 
 CMD ["npm", "run", "server"]

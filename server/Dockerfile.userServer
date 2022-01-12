@@ -1,9 +1,0 @@
-FROM node:16
-
-WORKDIR $HOME/in-db
-
-COPY . .
-
-EXPOSE 5001
-
-CMD ["node", "./server/userServer.js"]

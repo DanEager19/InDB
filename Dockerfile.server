@@ -1,0 +1,7 @@
+FROM node:16 as builder
+
+WORKDIR $HOME/in-db
+
+COPY . .
+
+RUN npm install && npm run server

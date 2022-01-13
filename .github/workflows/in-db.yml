@@ -25,3 +25,12 @@ jobs:
           cd ./app
           npm install
           npm run build
+
+      - name: Test server with ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: |
+          cd ./server
+          npm install
+          npm run server

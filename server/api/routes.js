@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = (app) => {
-    const List = require('../controllers/gameController');
+    const List = require('./controller');
 
     app.route('/games')
         .get(List.listAllGames)
@@ -14,4 +14,8 @@ module.exports = (app) => {
 
     app.route('/update/:title')
         .post(List.updateGame)
+    
+    app.route('/userDB')
+        .get(List.showUserDB)
+        .post(List.createEntry);
 }

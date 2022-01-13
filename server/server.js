@@ -1,10 +1,11 @@
 const auth = require('./cred.json'); 
 const express = require('express');
+const collection = 'index'
 app = express()
-port = process.env.PORT || 5001
+port = process.env.PORT || 5000
 mongoose = require('mongoose')
-const uri = `mongodb+srv://${auth.user}:${auth.password}@cluster0.xcoys.mongodb.net/users?retryWrites=true&w=majority`
-userDB = require('./api/models/userDBModel')
+const uri = `mongodb+srv://${auth.user}:${auth.password}@cluster0.xcoys.mongodb.net/${collection}?retryWrites=true&w=majority`
+Data = require('./api/models')
 
 mongoose.connect(uri, {
     useNewUrlParser: true,
@@ -18,7 +19,7 @@ mongoose.connect(uri, {
 app.use(express.urlencoded({extended: true}))
 app.use(express.json());
 
-const routes = require('./api/routes/userDBRoute');
+const routes = require('./api/routes');
 
 routes(app);
 
@@ -27,4 +28,4 @@ app.get('*', (req, res) => {
 })
 
 app.listen(port);
-console.log('userDB RESTful API started on port: ' + port);
+console.log('Data list RESTful API started on port: ' + port);

@@ -1,4 +1,4 @@
-const auth = require('../cred.json'); 
+const auth = require('./cred.json'); 
 const express = require('express');
 app = express()
 port = process.env.PORT || 5001

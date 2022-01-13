@@ -1,3 +1,5 @@
+#sudo docker build -t web .
+#sudo docker run -d web --name web
 FROM node:16 as builder
 
 WORKDIR $HOME/in-db/app

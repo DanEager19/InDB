@@ -5,7 +5,7 @@ app = express()
 port = process.env.PORT || 5000
 mongoose = require('mongoose')
 const uri = `mongodb+srv://${auth.user}:${auth.password}@cluster0.xcoys.mongodb.net/${collection}?retryWrites=true&w=majority`
-Data = require('./api/models')
+Data = require('./models')
 
 mongoose.connect(uri, {
     useNewUrlParser: true,
@@ -19,7 +19,7 @@ mongoose.connect(uri, {
 app.use(express.urlencoded({extended: true}))
 app.use(express.json());
 
-const routes = require('./api/routes');
+const routes = require('./routes');
 
 routes(app);
 

@@ -16,6 +16,7 @@ const GameSchema = new Schema ({
     gpu: { type: String },
     storage: { type: String }
 });
+module.exports = mongoose.model('Games', GameSchema);
 
 const userDBSchema = new Schema ({
     entry: {
@@ -34,4 +35,3 @@ const userDBSchema = new Schema ({
 });
 
 module.exports = mongoose.model('userDB', userDBSchema);
-module.exports = mongoose.model('Games', GameSchema);

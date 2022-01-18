@@ -4,7 +4,7 @@ import React from "react";
 import { APIConnection } from "../functions/apiConnection";
 
 function ListEntry() {
-    const json = APIConnection(5001, 'userDB')
+    const json = APIConnection(5000, 'userDB')
     return (
         <div className="container">
              {

@@ -1,0 +1,40 @@
+type Game {
+    id: ID!
+    title: String
+    summary: String
+    info: Info
+    require: Requirements 
+}
+type Info {
+    dev: String
+    pub: String
+    date: Date
+    rating: String 
+}
+
+type Requirements {
+    os: String
+    cpu: String
+    ram: String
+    gpu: String
+    storage: String
+}
+
+type User {
+    username: String
+    list: [Entry]
+}
+
+type Entry{
+    game: Game
+    score: Int
+    status: String
+}
+
+type Query {
+
+}
+
+type Mutation {
+
+}

@@ -4,9 +4,6 @@
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
-  <a href="https://twitter.com/ZionNyah" target="_blank">
-    <img alt="Twitter: ZionNyah" src="https://img.shields.io/twitter/follow/ZionNyah.svg?style=social" />
-  </a>
 </p>
 
 > A full stack database website to catalog indepndently developed video games. Written in TypeScript with the MERN stack.
@@ -14,19 +11,19 @@
 ## Install
 
 ```sh
-npm install
+yarn install
 ```
 
 ## Usage
 
 ```sh
-npm run start
+yarn run start
 ```
 
 ## Run tests
 
 ```sh
-npm run tests
+yarn run tests
 ```
 
 ## Author
@@ -34,12 +31,7 @@ npm run tests
 👤 **Daniel Eager**
 
 * Website: https://deager.dev
-* Twitter: [@ZionNyah](https://twitter.com/ZionNyah)
 * Github: [@DanEager19](https://github.com/DanEager19)
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
 
 ***
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

@@ -1,11 +1,4 @@
 node_modules
 build
 cred.json
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions     
-.next
+dist

@@ -4,6 +4,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+
 
 module.exports = {
   entry: './src/index.ts',
@@ -62,6 +64,10 @@ module.exports = {
     new ForkTsCheckerWebpackPlugin(),
     new CopyPlugin({
       patterns: [{ from: 'src/assets', to: 'assets' }]
-    })
+    }),
+    new ESLintPlugin({
+      extensions: ['.tsx', '.ts', '.js'],
+      exclude: 'node_modules'
+   })
  ]
 };

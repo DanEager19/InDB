@@ -7,15 +7,15 @@ function AddEntry() {
 
     const [inputs, setInputs] = useState({});
 
-    const handleChange = (event) => {    
+    const handleChange = (event: any) => {    
         const name = event.target.name;
         const value = event.target.value;
         setInputs(values => ({...values, [name]: value}))
     }
-    const handleSubmit = (event) => {
+    const handleSubmit = (event: any) => {
         event.preventDefault()
 
-        const url = `http://localhost:5001/userdb/${title}`
+        const url = `http://localhost:5000/userdb/${title}`
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -42,12 +42,6 @@ function AddEntry() {
                     </Dropdown.Menu>
                 </Dropdown>
                 <Form.Label>Score: {score}</Form.Label>
-                <RangeSlider 
-                    tooltip="off"
-                    onChange={e => setScore(e.target.value)}
-                    min={0}
-                    max={10}
-                />
             </form>
         </div>
     )

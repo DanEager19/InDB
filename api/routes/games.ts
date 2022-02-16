@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports = (app) => {
+module.exports = (app: any) => {
     const List = require('../controllers/games');
 
     app.route('/games')

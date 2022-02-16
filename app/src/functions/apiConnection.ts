@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function APIConnection(port: Int32Array, route: string) {
+export function APIConnection(port: number, route: string) {
     const [json, setJson] = useState([]);
     const getJSON = async () => {
         const response = await fetch(`http://localhost:${port}/${route}`)

@@ -1,16 +1,18 @@
-const auth = require('./cred.json'); 
-const express = require('express');
-const app = express()
-const port = process.env.PORT || 5000
-const mongoose = require('mongoose')
-const uri = `mongodb+srv://${auth.user}:${auth.password}@cluster0.xcoys.mongodb.net/index?retryWrites=true&w=majority`
-const Data = require('./models/games');
+
+const auth = require('../cred.json'); 
+import express from 'express';
+const app: express.Application = express()
+const port:number = 5000
+import mongoose from 'mongoose';
+const uri: string = `mongodb+srv://${auth.user}:${auth.password}@cluster0.xcoys.mongodb.net/index?retryWrites=true&w=majority`
+const Data:any = require('./models/games');
+
 mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
-}).then(res => {
+}).then(() => {
     console.log("Database Connected.")
-}).catch(err => {
+}).catch((err: { message: any; }) => {
     console.log(Error, err.message);
 })
 
@@ -21,7 +23,7 @@ const routes = require('./routes/games');
 
 routes(app);
 
-app.get('*', (req, res) => {
+app.get('*', (req:any, res:any) => {
     res.status(404).send({url:req.originalUrl + 'not found'})
 })
 

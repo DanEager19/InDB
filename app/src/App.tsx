@@ -22,7 +22,7 @@ import Update from './pages/update'
 
 function App() {
     return(
-        <div>
+        <>
             <Router>
                 <NavigationBar></NavigationBar>
                 <Switch>
@@ -36,8 +36,7 @@ function App() {
                 </Switch>
                 <Footer />
             </Router>
-        </div>
+        </>
     );
 }
-
-export default App
+export default App;

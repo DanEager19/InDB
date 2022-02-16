@@ -1,9 +1,8 @@
 'use strict'
-
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 const Game = mongoose.model('Games');
 
-exports.listAllGames = (req, res) => {
+exports.listAllGames = (res:any) => {
     Game.find({}, (err, game) =>{
         if (err)
             res.send(err);
@@ -11,9 +10,9 @@ exports.listAllGames = (req, res) => {
     });
 };
 
-exports.createGame = (req, res) => {
-    let newGame = Game(req.body);
-    newGame.save((err, game) => {
+exports.createGame = (req:any, res:any) => {
+    let newGame = new Game(req.body);
+    newGame.save((err:any, game:any) => {
         if (err)
             res.send(err);
         res.json(game);
@@ -21,16 +20,15 @@ exports.createGame = (req, res) => {
     });
 };
 
-exports.listGameInfo = (req, res) => {
-    Game.findById(req.params.gameId, (err, game) => {
+exports.listGameInfo = (req:any, res:any) => {
+    Game.findById(req.params.gameId, (err:any, game:any) => {
         if (err)
             res.send(err);
         res.json(game);
     });
 };
 
-//Probably useless
-exports.findByTitle = (req, res) => {
+exports.findByTitle = (req:any, res:any) => {
     Game.find({title: req.params.title}, (err, game) => {
         if (err)
             res.send(err);
@@ -38,7 +36,7 @@ exports.findByTitle = (req, res) => {
     });
 };
 
-exports.updateGame = (req, res) => {
+exports.updateGame = (req:any, res:any) => {
     Game.findOneAndUpdate({title:req.params.title}, req.body, {new:true}, 
         (err, game) => {
             if (err)
@@ -48,12 +46,13 @@ exports.updateGame = (req, res) => {
         console.log('Updated entry')
 };
 
-exports.removeGame = (req, res) => {
-    Game.remove({
+exports.removeGame = (req:any, res:any) => {
+    Game.deleteOne({
         _id: req.params.gameId
-    }, (err, game) => {
+    }, function (err: any, game: any) {
         if (err)
             res.send(err);
-        res.json({message: `${game} successfully deleted.`});
+        else
+            console.log(`${game} successfully deleted.`);
     });
 };

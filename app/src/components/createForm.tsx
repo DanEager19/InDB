@@ -1,14 +1,17 @@
 import React, {useState} from "react";
+interface input {
+    title: string;
 
+}
 function CreateForm() {
     const [inputs, setInputs] = useState({});
 
-    const handleChange = (event) => {    
+    const handleChange = (event:any) => {    
         const name = event.target.name;
         const value = event.target.value;
         setInputs(values => ({...values, [name]: value}))
     }
-    const handleSubmit = (event) => {
+    const handleSubmit = (event:any) => {
         event.preventDefault()
 
         const url = 'http://localhost:5000/games'

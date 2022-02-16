@@ -3,16 +3,32 @@ import {APIConnection} from "../functions/apiConnection"
 import { useParams } from "react-router-dom";
 
 function UpdateForm() {
-    const { title } = useParams();
+    type titleParams = {
+        title: string;
+    }
+    type input = {
+        title: string;
+        summary: string;
+        dev: string;
+        pub: string;
+        date: string;
+        rating: string;
+        os: string;
+        cpu: string;
+        ram: string;
+        gpu: string;
+        storage:string;
+    }
+    const { title } = useParams<titleParams>();
     const json = APIConnection(5000, title);
-    const [inputs, setInputs] = useState({});
+    const [inputs, setInputs] = useState<input>();
 
-    const handleChange = (event) => {    
+    const handleChange = (event:any) => {    
         const name = event.target.name;
         const value = event.target.value;
         setInputs(values => ({...values, [name]: value}))
     }
-    const handleSubmit = (event) => {
+    const handleSubmit = (event:any) => {
         event.preventDefault()
 
         const url = `http://localhost:5000/update/${title}`

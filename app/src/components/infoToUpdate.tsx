@@ -3,7 +3,10 @@ import { useParams } from 'react-router-dom';
 import history from '../functions/history';
 
 function InfoToUpdate() {
-    const { title } = useParams();
+    type titleParams = {
+        title: string;
+    }
+    const { title } = useParams<titleParams>();
 
     return (
         <form>

@@ -1,10 +1,20 @@
 import React, {useState} from "react";
-interface input {
-    title: string;
 
-}
 function CreateForm() {
-    const [inputs, setInputs] = useState({});
+    type input = {
+        title: string;
+        summary: string;
+        dev: string;
+        pub: string;
+        date: string;
+        rating: string;
+        os: string;
+        cpu: string;
+        ram: string;
+        gpu: string;
+        storage:string;
+    }
+    const [inputs, setInputs] = useState<input>();
 
     const handleChange = (event:any) => {    
         const name = event.target.name;
@@ -47,7 +57,7 @@ function CreateForm() {
                                 <label htmlFor="summary">Summary:</label>
                             </div>
                             <div className="col p-2">
-                                <textarea id="summary" rows="4" cols="40" name="summary" value={inputs.summary || ""} onChange={handleChange}></textarea>
+                                <textarea id="summary" name="summary" value={inputs.summary || ""} onChange={handleChange}></textarea>
                             </div>
                         </div>
                     </div>

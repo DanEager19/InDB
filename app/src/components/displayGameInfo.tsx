@@ -1,12 +1,13 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { APIConnection } from "../functions/apiConnection";
-import AddEntry from "./addToList";
 import InfoToUpdate from "./infoToUpdate";
 
 function DisplayGameInfo() {
-    
-    const { title } = useParams();
+    type titleParams = {
+        title: string;
+    }
+    const { title } = useParams<titleParams>();
     const json = APIConnection(5000, title);
 
     return (
@@ -17,7 +18,6 @@ function DisplayGameInfo() {
                         <div className="flexCol1 centerTag">
                             <h1>{item.title.replace(/_/g, ' ')}</h1>
                             <img id="cover" src={`../images/${item.img}`}/>
-                            <AddEntry />
                             <InfoToUpdate />
                         </div>
                         <div className="flexCol2">

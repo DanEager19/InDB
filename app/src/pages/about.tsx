@@ -4,7 +4,7 @@ function About() {
     return (
         <div>
             <p>
-                Source code can be found <a href="https://github.com/DanEager19/in-db">here</a>.
+                <a href="https://deager.dev">My Website</a>.
             </p>            
         </div>
     )

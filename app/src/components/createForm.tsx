@@ -31,7 +31,7 @@ function CreateForm() {
             body: JSON.stringify(inputs)
         }
         fetch(url, requestOptions)
-        .then(response => console.log('Submitted successfully'))
+        .then(() => console.log('Submitted successfully'))
         .catch(error => console.log('Form submit error', error))
     };
     return (

@@ -39,9 +39,6 @@ class Requirements {
 @InputType('GameInputType')
 export class GameType {
     @Field()
-    id: string;
-
-    @Field()
     title: string;
 
     @Field()

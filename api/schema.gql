@@ -23,7 +23,6 @@ type Requirements {
 }
 
 type GameType {
-  id: String!
   title: String!
   summary: String!
   information: Information!
@@ -46,7 +45,6 @@ input RequirementsInput {
 }
 
 input GameInputType {
-  id: String!
   title: String!
   summary: String!
   information: InformationInput!
@@ -55,4 +53,10 @@ input GameInputType {
 
 type Query {
   game: [GameType!]!
+}
+
+type Mutation {
+  createGame(input: GameInputType!): GameType!
+  updateGame(id: String!, input: GameInputType!): GameType!
+  deleteGame(id: String!): GameType!
 }

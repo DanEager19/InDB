@@ -2,7 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
 class Information {
-    dev?: string
+    dev: string
     pub: string
     date: string
     rating: 'E' | 'E10' | 'T' | 'M'
@@ -25,10 +25,10 @@ export class Game {
     summary: string;
     
     @Prop()
-    information: Information;
+    information?: Information;
 
     @Prop()
-    requirements: Requirements;
+    requirements?: Requirements;
 }
 
 export type GameDocument = Game & Document;

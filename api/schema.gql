@@ -29,6 +29,18 @@ type GameType {
   requirements: Requirements!
 }
 
+type List {
+  title: String!
+  score: Float!
+  status: String!
+}
+
+type UserType {
+  username: String!
+  password: String!
+  list: List!
+}
+
 input InformationInput {
   dev: String!
   pub: String!
@@ -51,8 +63,21 @@ input GameInputType {
   requirements: RequirementsInput!
 }
 
+input ListInput {
+  title: String!
+  score: Float!
+  status: String!
+}
+
+input UserInputType {
+  username: String!
+  password: String!
+  list: ListInput!
+}
+
 type Query {
   game: [GameType!]!
+  user: [UserType!]!
 }
 
 type Mutation {

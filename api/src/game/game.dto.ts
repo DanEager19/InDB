@@ -45,8 +45,8 @@ export class GameType {
     summary: string;
     
     @Field()
-    information: Information;
+    information?: Information;
 
     @Field()
-    requirements: Requirements
+    requirements?: Requirements
 }

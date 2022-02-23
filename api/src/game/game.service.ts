@@ -6,9 +6,9 @@ import { GameType } from './game.dto';
 
 @Injectable()
 export class GameService {
-    constructor(@InjectModel(Game.name) private gameModel: Model<GameDocument>) {}
+    constructor(@InjectModel('Game') private gameModel: Model<Game>) {}
 
-    async findAll(): Promise<Game[]> {
+    async findAll(): Promise<GameType[]> {
         return this.gameModel.find().exec();
     }
     async create(createGameDto: GameType): Promise<Game> {
@@ -20,5 +20,8 @@ export class GameService {
     }
     async delete(id: string): Promise<Game> {
         return this.gameModel.findByIdAndDelete(id);
+    }
+    async findOne(input: GameType): Promise<Game[]> {
+        return this.gameModel.find({input}).exec();
     }
 }

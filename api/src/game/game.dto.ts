@@ -10,7 +10,7 @@ class Information {
     pub: string
 
     @Field()
-    date: Date
+    date: string
 
     @Field()
     rating: 'E' | 'E10' | 'T' | 'M'
@@ -36,6 +36,16 @@ class Requirements {
 }
 
 @ObjectType('GameType')
+export class GameInput {
+    @Field()
+    title: string;
+    @Field()
+    summary: string;
+    @Field()
+    information: Information;
+    @Field()
+    requirements: Requirements;
+}
 @InputType('GameInputType')
 export class GameType {
     @Field()
@@ -45,8 +55,8 @@ export class GameType {
     summary: string;
     
     @Field()
-    information?: Information;
+    information: Information;
 
     @Field()
-    requirements?: Requirements
+    requirements: Requirements
 }

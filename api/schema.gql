@@ -5,14 +5,9 @@
 type Information {
   dev: String!
   pub: String!
-  date: DateTime!
+  date: String!
   rating: String!
 }
-
-"""
-A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
-"""
-scalar DateTime
 
 type Requirements {
   os: String!
@@ -44,7 +39,7 @@ type UserType {
 input InformationInput {
   dev: String!
   pub: String!
-  date: DateTime!
+  date: String!
   rating: String!
 }
 
@@ -77,6 +72,7 @@ input UserInputType {
 
 type Query {
   game: [GameType!]!
+  findGame(input: GameInputType!): [GameType!]!
   user: [UserType!]!
 }
 

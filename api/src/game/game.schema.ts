@@ -25,10 +25,10 @@ export class Game {
     summary: string;
     
     @Prop()
-    information?: Information;
+    information: Information;
 
     @Prop()
-    requirements?: Requirements;
+    requirements: Requirements;
 }
 
 export type GameDocument = Game & Document;

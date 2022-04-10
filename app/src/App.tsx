@@ -11,14 +11,15 @@ import NavigationBar from "./components/navbar"
 import Footer from "./components/footer"
 
 //Pages
-import Create from "./pages/create"
+//import Create from "./pages/create"
 import List from "./pages/list"
 import Login from "./pages/login"
 import Home from './pages/home'
 import Info from './pages/info'
 import About from './pages/about'
-import Update from './pages/update'
-
+//import Update from './pages/update'
+//<Route exact path='/create' component={Create} />
+//<Route exact path='/info/update/:title' component={Update} />
 function App() {
     return(
         <>
@@ -29,8 +30,7 @@ function App() {
                     <Route exact path='/info/:title' component={Info} />
                     <Route exact path='/list' component={List} />
                     <Route exact path='/login' component={Login} />
-                    <Route exact path='/create' component={Create} />
-                    <Route exact path='/info/update/:title' component={Update} />
+                    
                     <Route exact path='/about' component={About}/>
                 </Switch>
                 <Footer />

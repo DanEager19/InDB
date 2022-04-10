@@ -5,6 +5,6 @@ import {render} from 'react-dom';
 //App
 import App from './App'
 
-const root:any = document.getElementById('root');
+const root = document.getElementById('root');
 
 render(<App />, root);

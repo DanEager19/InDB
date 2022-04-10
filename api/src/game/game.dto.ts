@@ -36,16 +36,6 @@ class Requirements {
 }
 
 @ObjectType('GameType')
-export class GameInput {
-    @Field()
-    title: string;
-    @Field()
-    summary: string;
-    @Field()
-    information: Information;
-    @Field()
-    requirements: Requirements;
-}
 @InputType('GameInputType')
 export class GameType {
     @Field()

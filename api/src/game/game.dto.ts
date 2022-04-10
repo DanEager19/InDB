@@ -38,15 +38,18 @@ class Requirements {
 @ObjectType('GameType')
 @InputType('GameInputType')
 export class GameType {
+    @Field({nullable: true})
+    _id: string;
+
     @Field()
     title: string;
 
-    @Field()
+    @Field({nullable: true})
     summary: string;
     
-    @Field()
+    @Field({nullable: true})
     information: Information;
 
-    @Field()
-    requirements: Requirements
+    @Field({nullable: true})
+    requirements: Requirements;
 }

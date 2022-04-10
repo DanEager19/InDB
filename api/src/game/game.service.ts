@@ -6,10 +6,13 @@ import { GameType } from './game.dto';
 
 @Injectable()
 export class GameService {
-    constructor(@InjectModel('Game') private gameModel: Model<Game>) {}
+    constructor(@InjectModel(Game.name) private gameModel: Model<GameDocument>) {}
 
-    async findAll(): Promise<GameType[]> {
+    async findAll(): Promise<Game[]> {
         return this.gameModel.find().exec();
+    }
+    async findOne(id: string): Promise<Game> {
+        return this.gameModel.findById(id).exec();
     }
     async create(createGameDto: GameType): Promise<Game> {
         const createdGame = new this.gameModel(createGameDto);
@@ -20,8 +23,5 @@ export class GameService {
     }
     async delete(id: string): Promise<Game> {
         return this.gameModel.findByIdAndDelete(id);
-    }
-    async findOne(input: GameType): Promise<Game[]> {
-        return this.gameModel.find({input}).exec();
     }
 }

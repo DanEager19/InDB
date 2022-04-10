@@ -18,22 +18,11 @@ type Requirements {
 }
 
 type GameType {
+  _id: String
   title: String!
-  summary: String!
-  information: Information!
-  requirements: Requirements!
-}
-
-type List {
-  title: String!
-  score: Float!
-  status: String!
-}
-
-type UserType {
-  username: String!
-  password: String!
-  list: List!
+  summary: String
+  information: Information
+  requirements: Requirements
 }
 
 input InformationInput {
@@ -52,28 +41,16 @@ input RequirementsInput {
 }
 
 input GameInputType {
+  _id: String
   title: String!
-  summary: String!
-  information: InformationInput!
-  requirements: RequirementsInput!
-}
-
-input ListInput {
-  title: String!
-  score: Float!
-  status: String!
-}
-
-input UserInputType {
-  username: String!
-  password: String!
-  list: ListInput!
+  summary: String
+  information: InformationInput
+  requirements: RequirementsInput
 }
 
 type Query {
-  game: [GameType!]!
-  findGame(input: GameInputType!): [GameType!]!
-  user: [UserType!]!
+  games: [GameType!]!
+  findGame(id: String!): GameType!
 }
 
 type Mutation {

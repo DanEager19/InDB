@@ -5,6 +5,8 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { GameModule } from './game/game.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { UserController } from './user/user.controller';
+import { UserModule } from './user/user.module';
 
 const auth = require('../cred.json'); 
 
@@ -17,8 +19,10 @@ const auth = require('../cred.json');
     }),
 
     MongooseModule.forRoot(`mongodb+srv://${auth.user}:${auth.password}@cluster0.xcoys.mongodb.net/games?retryWrites=true&w=majority`),
+
+    UserModule,
     ],
-  controllers: [AppController],
+  controllers: [AppController, UserController],
   providers: [AppService],
 })
 export class AppModule {}

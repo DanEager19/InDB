@@ -5,7 +5,6 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { GameModule } from './game/game.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { UserController } from './user/user.controller';
 import { UserModule } from './user/user.module';
 
 const auth = require('../cred.json'); 

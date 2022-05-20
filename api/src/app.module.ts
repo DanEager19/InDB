@@ -12,6 +12,7 @@ const auth = require('../cred.json');
 @Module({
   imports: [
     GameModule,
+    UserModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: 'schema.gql'
@@ -21,7 +22,7 @@ const auth = require('../cred.json');
 
     UserModule,
     ],
-  controllers: [AppController, UserController],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}

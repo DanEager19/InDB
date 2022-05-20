@@ -10,18 +10,22 @@ export class GameResolver {
     async games() {
         return this.gameService.findAll();
     }
+
     @Query(() => GameType)
     async findGame(@Args('id') id: string) {
         return this.gameService.findOne(id);
     }
+
     @Mutation(() => GameType)
     async createGame(@Args('input') input: GameType) {
         return this.gameService.create(input);
     }
+
     @Mutation(() => GameType)
     async updateGame(@Args('id') id: string, @Args('input') input: GameType) {
         return this.gameService.update(id, input);
     }
+    
     @Mutation(() => GameType)
     async deleteGame(@Args('id') id: string) {
         return this.gameService.delete(id);

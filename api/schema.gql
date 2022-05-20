@@ -25,6 +25,18 @@ type GameType {
   requirements: Requirements
 }
 
+type List {
+  title: String!
+  score: Float!
+  status: String!
+}
+
+type UserType {
+  _id: String
+  username: String!
+  list: List
+}
+
 input InformationInput {
   dev: String!
   pub: String!
@@ -48,13 +60,29 @@ input GameInputType {
   requirements: RequirementsInput
 }
 
+input ListInput {
+  title: String!
+  score: Float!
+  status: String!
+}
+
+input UserInputType {
+  _id: String
+  username: String!
+  list: ListInput
+}
+
 type Query {
   games: [GameType!]!
   findGame(id: String!): GameType!
+  users: [UserType!]!
 }
 
 type Mutation {
   createGame(input: GameInputType!): GameType!
   updateGame(id: String!, input: GameInputType!): GameType!
   deleteGame(id: String!): GameType!
+  createUser(input: UserInputType!): UserType!
+  updateUser(id: String!, input: UserInputType!): UserType!
+  deleteUser(id: String!): UserType!
 }

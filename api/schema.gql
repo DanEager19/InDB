@@ -74,7 +74,7 @@ input UserInputType {
 
 type Query {
   games: [GameType!]!
-  findGame(id: String!): GameType!
+  findGameByTitle(title: String!): GameType!
   users: [UserType!]!
 }
 

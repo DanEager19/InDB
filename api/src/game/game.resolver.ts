@@ -12,8 +12,8 @@ export class GameResolver {
     }
 
     @Query(() => GameType)
-    async findGame(@Args('id') id: string) {
-        return this.gameService.findOne(id);
+    async findGameByTitle(@Args('title') title: string) {
+        return this.gameService.findGame(title);
     }
 
     @Mutation(() => GameType)

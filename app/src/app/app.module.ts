@@ -8,8 +8,11 @@ import { UpdateFormComponent } from './update-form/update-form.component';
 import { CreateFormComponent } from './create-form/create-form.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AboutComponent } from './about/about.component';
+import { GamelistComponent } from './gamelist/gamelist.component';
+import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
+import { GraphQLModule } from './graphql.module';
 
 @NgModule({
   declarations: [
@@ -17,16 +20,19 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     UpdateFormComponent,
     CreateFormComponent,
-    FooterComponent
+    FooterComponent,
+    AboutComponent,
+    GamelistComponent
   ],
   imports: [
     BrowserModule,
+    ApolloModule,
     AppRoutingModule,
     NgbModule,
-    GraphQLModule,
-    HttpClientModule
+    HttpClientModule,
+    GraphQLModule
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

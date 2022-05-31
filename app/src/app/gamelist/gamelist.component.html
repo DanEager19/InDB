@@ -1,0 +1,9 @@
+<div>
+    <div *ngIf="error">
+        <p>Error: {{ error }}</p>
+    </div>
+</div>
+
+<div *ngFor="let game of games"> 
+    <p>{{ game.title }}</p>
+</div>

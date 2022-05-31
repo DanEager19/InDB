@@ -1,18 +1,17 @@
 import { gql } from "apollo-angular";
 
-const GET_GAMES = gql`
+const GET_ALL_GAMES = gql`
     query {
         games {
             _id
             title
         }
     }
-
-`
+`;
 
 const GET_FULL_GAME = gql`
     query {
-        games {
+        findGameByTitle(title: $title) {
             _id
             title
             summary
@@ -31,6 +30,6 @@ const GET_FULL_GAME = gql`
             }
         }
     }
-`
+`;
 
-export { GET_GAMES, GET_FULL_GAME } 
+export { GET_ALL_GAMES, GET_FULL_GAME } 

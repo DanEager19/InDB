@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Apollo } from 'apollo-angular';
-import { GET_GAMES } from '../graphql/graphql.queries';
+import { GameType, GamesService } from '../games.service';
 
 @Component({
   selector: 'app-gamelist',
@@ -8,20 +7,18 @@ import { GET_GAMES } from '../graphql/graphql.queries';
   styleUrls: ['./gamelist.component.scss']
 })
 export class GamelistComponent implements OnInit {
-  games: any[] = [];
+  games: GameType[] = [];
   loading = true;
   error: any;
+  title: string = 'G';
+  constructor(private gamesService: GamesService) { }
 
-  constructor(private apollo: Apollo) { }
-
-  ngOnInit(): void {
-    this.apollo.watchQuery({
-      query: GET_GAMES,
-    }).valueChanges.subscribe((result: any) => {
-      this.games = result?.data?.games;
-      this.loading = result.loading;
-      this.error = result.error;
-    })
+  async ngOnInit(): Promise<void> {
+     await this.updateGames();
   }
 
+  async updateGames() {
+    const result = await this.gamesService.getOneGame(this.title);
+    this.games = result;
+  };
 }

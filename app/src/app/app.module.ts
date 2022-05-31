@@ -11,7 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
 import { GamelistComponent } from './gamelist/gamelist.component';
-import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
+import { ApolloModule} from 'apollo-angular';
 import { GraphQLModule } from './graphql.module';
 
 @NgModule({

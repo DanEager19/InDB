@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { GameType, GamesService } from '../games.service';
+import { Apollo } from 'apollo-angular';
+import { GameType, GET_ALL_GAMES } from '../games.service';
 
 @Component({
-  selector: 'app-gamelist',
+  selector: 'gamelist',
   templateUrl: './gamelist.component.html',
   styleUrls: ['./gamelist.component.scss']
 })
@@ -10,15 +11,16 @@ export class GamelistComponent implements OnInit {
   games: GameType[] = [];
   loading = true;
   error: any;
-  title: string = 'G';
-  constructor(private gamesService: GamesService) { }
 
-  async ngOnInit(): Promise<void> {
-     await this.updateGames();
+  constructor(private apollo: Apollo) {}
+
+  ngOnInit():void {
+    this.apollo.watchQuery({
+      query: GET_ALL_GAMES
+    }).valueChanges.subscribe(({data, error, loading}: any) => {
+      this.loading = loading;
+      this.error = error
+      this.games = data.games;
+    });
   }
-
-  async updateGames() {
-    const result = await this.gamesService.getOneGame(this.title);
-    this.games = result;
-  };
 }

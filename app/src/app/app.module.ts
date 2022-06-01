@@ -13,6 +13,7 @@ import { AboutComponent } from './about/about.component';
 import { GamelistComponent } from './gamelist/gamelist.component';
 import { ApolloModule} from 'apollo-angular';
 import { GraphQLModule } from './graphql.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { GraphQLModule } from './graphql.module';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    GraphQLModule
+    GraphQLModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ ],
   bootstrap: [AppComponent]

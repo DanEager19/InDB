@@ -4,6 +4,12 @@
     </div>
 </div>
 
+<div>
+    <div *ngIf="loading">
+        <p>Loading...</p>
+    </div>
+</div>
+
 <div *ngFor="let game of games"> 
     <p>{{ game.title }}</p>
 </div>

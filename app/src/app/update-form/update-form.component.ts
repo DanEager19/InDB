@@ -13,8 +13,6 @@ export class UpdateFormComponent implements OnInit {
   loading = true;
   error: any;
 
-  
-
   constructor(private apollo: Apollo) { }
   
   ngOnInit(): void {
@@ -42,7 +40,7 @@ export class UpdateFormComponent implements OnInit {
       mutation: UPDATE_GAME,
       variables: {
         id: this.game.id,
-        game: this.game
+        input: this.game
       },
       refetchQueries: [{
         query: GET_FULL_GAME,
@@ -53,7 +51,7 @@ export class UpdateFormComponent implements OnInit {
     }).subscribe(({data, error, loading}: any) => {
       this.loading = loading;
       this.error = error
-      this.game = data.updateTitle;
+      this.game = data.findGameByTitle;
       this.gameForm.reset();
     });
   }

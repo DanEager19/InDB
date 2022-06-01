@@ -74,8 +74,28 @@ const UPDATE_GAME = gql`
         }
     }
 `;
+const CREATE_GAME = gql`
+    mutation {
+        createGame(input: $input) {
+            title
+            summary
+            information {
+                dev
+                pub
+                date
+                rating
+            }
+            requirements {
+                os
+                cpu
+                ram
+                gpu
+                storage
+            }
+        }
+    }
+`
 /*
-const UPDATE_GAME 
 const DELETE_GAME
 */
-export { GET_ALL_GAMES, GET_FULL_GAME, UPDATE_GAME, Information, Requirements, GameType }
+export { GET_ALL_GAMES, GET_FULL_GAME, UPDATE_GAME, CREATE_GAME, Information, Requirements, GameType }

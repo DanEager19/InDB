@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GET_FULL_GAME, UPDATE_GAME } from '../games.service';
 import { Apollo } from 'apollo-angular';
-import { FormControl, FormGroup, Validators} from '@angular/forms'
+import { FormControl, FormGroup, NgForm, Validators} from '@angular/forms'
 
 @Component({
   selector: 'update-form',
@@ -33,7 +33,9 @@ export class UpdateFormComponent implements OnInit {
     title: new FormControl('', Validators.required),
     summary: new FormControl('', Validators.required)
   })
-  
+  onSubmit(f: NgForm) {
+
+  }
   updateGame() {
     this.game = this.gameForm.value;
     this.apollo.mutate({

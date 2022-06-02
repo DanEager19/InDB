@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Apollo } from 'apollo-angular';
-import { GameType, GET_ALL_GAMES } from '../games.service';
+import { GameInputType, GET_ALL_GAMES } from '../games.service';
 
 @Component({
   selector: 'gamelist',
@@ -8,7 +8,7 @@ import { GameType, GET_ALL_GAMES } from '../games.service';
   styleUrls: ['./gamelist.component.scss']
 })
 export class GamelistComponent implements OnInit {
-  games: GameType[] = [];
+  games: GameInputType[] = [];
   loading = true;
   error: any;
 

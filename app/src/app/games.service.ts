@@ -1,4 +1,5 @@
 import { gql } from "apollo-angular";
+
 interface Information {
   dev: string;
   pub: string;
@@ -12,14 +13,22 @@ interface Requirements {
   ram: string;
   gpu: string;
   storage: string;
+
 };
 
 interface GameType {
-  _id?: string;
-  title: string;
-  summary?: string;
-  information?: Information;
-  requirements?: Requirements;
+    _id?:string;
+    title:string;
+    summary?:string;
+    information?:Information;
+    requirements?:Requirements;
+}
+
+interface GameInputType {
+    title:string;
+    summary:string;
+    information:Information;
+    requirements:Requirements;
 }
 const GET_ALL_GAMES = gql`
     query {
@@ -52,8 +61,30 @@ const GET_FULL_GAME = gql`
         }
     }
 `;
+
+const CREATE_GAME = gql`
+    mutation createGame($input: GameInputType!) {
+        createGame(input: $input) {
+            title,
+            summary
+            information {
+                dev
+                pub
+                date
+                rating
+            }
+            requirements {
+                os
+                cpu
+                ram
+                gpu
+                storage
+            }
+        }
+    }
+`
 const UPDATE_GAME = gql`
-    mutation {
+    mutation updateGame($id: String!, $input: GameInputType!){
         updateGame(id: $id, input: $input) {
             _id
             title
@@ -74,28 +105,7 @@ const UPDATE_GAME = gql`
         }
     }
 `;
-const CREATE_GAME = gql`
-    mutation {
-        createGame(input: $input) {
-            title
-            summary
-            information {
-                dev
-                pub
-                date
-                rating
-            }
-            requirements {
-                os
-                cpu
-                ram
-                gpu
-                storage
-            }
-        }
-    }
-`
 /*
 const DELETE_GAME
 */
-export { GET_ALL_GAMES, GET_FULL_GAME, UPDATE_GAME, CREATE_GAME, Information, Requirements, GameType }
+export { GET_ALL_GAMES, GET_FULL_GAME, UPDATE_GAME, CREATE_GAME, GameType, GameInputType }

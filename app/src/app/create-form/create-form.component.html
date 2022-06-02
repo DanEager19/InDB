@@ -1,115 +1,114 @@
-{{ game.title }}
-    <div className="container">
-      <form class="form" (ngSubmit)="createGame()">
-          <div className="row">
-              <div className="row">
-                  <div className="row">
-                      <div className="row">
-                          <h4>General:</h4>
-                      </div>
-                      <div className="row">
-                          <div className="col-3 p-2">
-                              <label htmlFor="title">Title:</label>
-                          </div>
-                          <div className="col p-2">
-                              <input type="text" id="title" name="title" [(ngModel)]="game.title" >
-                          </div>
-                      </div>
-                      <div className="row">
+<div className="container">
+    <form class="form" #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div className="row">
+            <div className="row">
+                <div className="row">
+                    <div className="row">
+                        <h4>General:</h4>
+                    </div>
+                    <div className="row">
                         <div className="col-3 p-2">
-                            <label htmlFor="summary">Summary:</label>
+                            <label htmlFor="title">Title:</label>
                         </div>
                         <div className="col p-2">
-                            <textarea id="summary" name="summary"></textarea>
+                            <input type="text" id="title" name="title" ngModel >
                         </div>
+                    </div>
+                    <div className="row">
+                    <div className="col-3 p-2">
+                        <label htmlFor="summary">Summary:</label>
+                    </div>
+                    <div className="col p-2">
+                        <textarea id="summary" name="summary" ngModel></textarea>
                     </div>
                 </div>
-                <div className="col">
-                    <div className="row">
-                        <h4>Info:</h4>
+            </div>
+            <div className="col">
+                <div className="row">
+                    <h4>Info:</h4>
+                </div>
+                <div className="row">
+                    <div className="col-3 p-2">
+                        <label htmlFor="dev">Developer:</label>
                     </div>
-                    <div className="row">
-                        <div className="col-3 p-2">
-                            <label htmlFor="dev">Developer:</label>
-                        </div>
-                        <div className="col p-2">
-                            <input type="text" id="dev" name="dev" />
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-3 p-2">
-                            <label htmlFor="pub">Publisher:</label>
-                        </div>
-                        <div className="col p-2">
-                            <input type="text" id="pub" name="pub" />
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-3 p-2">
-                            <label htmlFor="date">Release Date:</label>
-                        </div>
-                        <div className="col p-2">
-                            <input type="date" id="date" name="date" />
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-3 p-2">
-                            <label htmlFor="rating">Rating:</label>
-                        </div>
-                        <div className="col p-2">
-                            <input type="text" id="rating" name="rating" />
-                        </div>
+                    <div className="col p-2">
+                        <input type="text" id="dev" name="dev" ngModel >
                     </div>
                 </div>
-                <div className="col">
-                    <div className="row">
-                        <h4>System Requirements:</h4>
+                <div className="row">
+                    <div className="col-3 p-2">
+                        <label htmlFor="pub">Publisher:</label>
                     </div>
-                    <div className="row">
-                        <div className="col-3 p-2">
-                            <label htmlFor="os">OS:</label>
-                        </div>
-                        <div className="col p-2">
-                            <input type="text" id="os" name="os" >
-                        </div>
+                    <div className="col p-2">
+                        <input type="text" id="pub" name="pub" ngModel >
                     </div>
-                    <div className="row">
-                        <div className="col-3 p-2">
-                            <label htmlFor="cpu">Processor:</label>
-                        </div>
-                        <div className="col p-2">
-                            <input type="text" id="cpu" name="cpu" />
-                        </div>
+                </div>
+                <div className="row">
+                    <div className="col-3 p-2">
+                        <label htmlFor="date">Release Date:</label>
                     </div>
-                    <div className="row">
-                        <div className="col-3 p-2">
-                            <label htmlFor="ram">Memory:</label>
-                        </div>
-                        <div className="col p-2">
-                            <input type="text" id="ram" name="ram"/>
-                        </div>
+                    <div className="col p-2">
+                        <input type="date" id="date" name="date" ngModel >
                     </div>
-                    <div className="row">
-                        <div className="col-3 p-2">
-                            <label htmlFor="gpu">Graphics:</label>
-                        </div>
-                        <div className="col p-2">
-                            <input type="text" id="gpu" name="gpu" />
-                        </div>
+                </div>
+                <div className="row">
+                    <div className="col-3 p-2">
+                        <label htmlFor="rating">Rating:</label>
                     </div>
-                    <div className="row">
-                        <div className="col-3 p-2">
-                            <label htmlFor="storage">Storage:</label>
-                        </div>
-                        <div className="col p-2">
-                            <input type="text" id="storage" name="storage" />
-                        </div>
+                    <div className="col p-2">
+                        <input type="text" id="rating" name="rating" ngModel >
                     </div>
-                  </div>
-                  <div className="d-flex justify-content-center">
-                      <button (click)="createGame()">Create</button>
-                  </div>
-              </div>
-          </div>
-      </form>
-    </div>
+                </div>
+            </div>
+            <div className="col">
+                <div className="row">
+                    <h4>System Requirements:</h4>
+                </div>
+                <div className="row">
+                    <div className="col-3 p-2">
+                        <label htmlFor="os">OS:</label>
+                    </div>
+                    <div className="col p-2">
+                        <input type="text" id="os" name="os" ngModel >
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-3 p-2">
+                        <label htmlFor="cpu">Processor:</label>
+                    </div>
+                    <div className="col p-2">
+                        <input type="text" id="cpu" name="cpu" ngModel >
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-3 p-2">
+                        <label htmlFor="ram">Memory:</label>
+                    </div>
+                    <div className="col p-2">
+                        <input type="text" id="ram" name="ram" ngModel >
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-3 p-2">
+                        <label htmlFor="gpu">Graphics:</label>
+                    </div>
+                    <div className="col p-2">
+                        <input type="text" id="gpu" name="gpu" ngModel >
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-3 p-2">
+                        <label htmlFor="storage">Storage:</label>
+                    </div>
+                    <div className="col p-2">
+                        <input type="text" id="storage" name="storage" ngModel >
+                    </div>
+                </div>
+                </div>
+                <div className="d-flex justify-content-center">
+                    <button class="btn btn-secondary" type="submit">Create</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

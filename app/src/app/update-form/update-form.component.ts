@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GameType, GET_FULL_GAME, UPDATE_GAME } from '../games.service';
+import { GET_FULL_GAME, UPDATE_GAME } from '../games.service';
 import { Apollo } from 'apollo-angular';
 import { FormControl, FormGroup, Validators} from '@angular/forms'
 

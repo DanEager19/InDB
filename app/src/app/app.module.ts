@@ -14,6 +14,7 @@ import { GamelistComponent } from './gamelist/gamelist.component';
 import { ApolloModule} from 'apollo-angular';
 import { GraphQLModule } from './graphql.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GameInfoComponent } from './game-info/game-info.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CreateFormComponent,
     FooterComponent,
     AboutComponent,
-    GamelistComponent
+    GamelistComponent,
+    GameInfoComponent
   ],
   imports: [
     BrowserModule,

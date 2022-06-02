@@ -1,0 +1,33 @@
+<div class="container flexWrap" >
+    <div class="flexCol1 centerTag">
+        <h1>{{game?.title}}</h1>
+        <img id="cover">
+    </div>
+    <div class="d-flex alightcontent-center flex-column">
+        <div class="row desc">
+            <h4 class="centerTag">Summary:</h4>
+            <p id="summary" class="centerTag">{{ game?.summary }}</p>
+        </div>
+        <div class="row d-flex alighn-items-stretch">
+            <div class="col info">
+                <h4 class="centerTag">Info</h4>
+                <ul>
+                    <li id="dev"><b>Developer: </b>{{game?.information?.dev}}</li>
+                    <li id="pub"><b>Publisher: </b>{{game?.information?.pub}}</li>
+                    <li id="date"><b>Release Date: </b>{{game?.information?.date}}</li>
+                    <li id="rating"><b>Rating: </b>{{game?.information?.rating}}</li>
+                </ul>
+            </div>
+            <div class="col info">
+                <h4 class="centerTag">System Requirements</h4>
+                <ul>
+                    <li id="os"><b>OS: </b>{{game?.requirements?.os}}</li>
+                    <li id="cpu"><b>Processor: </b>{{game?.requirements?.cpu}}</li>
+                    <li id="ram"><b>Memory: </b>{{game?.requirements?.ram}}</li>
+                    <li id="gpu"><b>Graphics: </b>{{game?.requirements?.gpu}}</li>
+                    <li id="storage"><b>Storage: </b>{{game?.requirements?.storage}}</li>
+                </ul>
+            </div>
+        </div>
+    </div> 
+</div>

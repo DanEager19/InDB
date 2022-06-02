@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Apollo } from 'apollo-angular';
-import { GameInputType, GET_ALL_GAMES } from '../games.service';
+import { GameInputType, GET_ALL_GAMES } from '../game.service';
 
 @Component({
   selector: 'gamelist',

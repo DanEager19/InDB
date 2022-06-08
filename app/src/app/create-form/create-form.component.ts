@@ -8,22 +8,13 @@ import { GameService } from '../game.service';
   styleUrls: ['./create-form.component.scss']
 })
 export class CreateFormComponent implements OnInit {
-  formGroup = new FormGroup({
-    title: new FormControl(''),
-    summary: new FormControl(''),
-    dev: new FormControl(''),
-    pub: new FormControl(''),
-    date: new FormControl(''),
-    rating: new FormControl(''),
-    os: new FormControl(''),
-    cpu: new FormControl(''),
-    ram: new FormControl(''),
-    gpu: new FormControl(''),
-    storage: new FormControl(''),
-  });
-  constructor(public gameService: GameService) {}
 
-
+  constructor(private gameService: GameService) {}
+  formGroup: FormGroup = this.gameService.gameForm()
+  
+  async createGameForm() {
+    await this.gameService.createGame(this.formGroup.value)
+  }
   ngOnInit(): void {
   
   }

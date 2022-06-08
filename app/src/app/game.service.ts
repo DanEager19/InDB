@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormGroup, NgForm } from '@angular/forms';
+import { Form, FormControl, FormGroup, NgForm } from '@angular/forms';
 import { Apollo, gql, QueryRef } from 'apollo-angular';
 
 interface Information {
@@ -65,50 +65,70 @@ export const GET_FULL_GAME = gql`
 `;
 
 export const CREATE_GAME = gql`
-    mutation createGame($input: GameInputType!) {
-        createGame(input: $input) {
-            title,
-            summary
-            information {
-                dev
-                pub
-                date
-                rating
-            }
-            requirements {
-                os
-                cpu
-                ram
-                gpu
-                storage
-            }
-        }
+  mutation createGame($input: GameInputType!) {
+    createGame(input: $input) {
+      title,
+      summary
+      information {
+          dev
+          pub
+          date
+          rating
+      }
+      requirements {
+          os
+          cpu
+          ram
+          gpu
+          storage
+      }
     }
+  }
 `
 export const UPDATE_GAME = gql`
-    mutation updateGame($id: String!, $input: GameInputType!){
-        updateGame(id: $id, input: $input) {
-            title
-            summary
-            information {
-                dev
-                pub
-                date
-                rating
-            }
-            requirements {
-                os
-                cpu
-                ram
-                gpu
-                storage
-            }
-        }
+  mutation updateGame($id: String!, $input: GameInputType!){
+    updateGame(id: $id, input: $input) {
+      title
+      summary
+      information {
+          dev
+          pub
+          date
+          rating
+      }
+      requirements {
+          os
+          cpu
+          ram
+          gpu
+          storage
+      }
     }
+  }
 `;
-/*
-const DELETE_GAME
-*/
+
+export const DELETE_GAME = gql`
+  mutation deleteGame($id: String!) {
+    deleteGame(id: $id) {
+      title
+      summary
+      information {
+          dev
+          pub
+          date
+          rating
+      }
+      requirements {
+          os
+          cpu
+          ram
+          gpu
+          storage
+      }
+    }
+  }
+` 
+
 
 @Injectable({
   providedIn: 'root'
@@ -116,6 +136,25 @@ const DELETE_GAME
 export class GameService {
 
   constructor(private apollo: Apollo) { }
+
+  gameForm(): FormGroup {
+    let formGroup: FormGroup = new FormGroup({
+      id: new FormControl({value:'', disabled: true}),
+      title: new FormControl(''),
+      summary: new FormControl(''),
+      dev: new FormControl(''),
+      pub: new FormControl(''),
+      date: new FormControl(''),
+      rating: new FormControl(''),
+      os: new FormControl(''),
+      cpu: new FormControl(''),
+      ram: new FormControl(''),
+      gpu: new FormControl(''),
+      storage: new FormControl(''),
+    });
+    return formGroup;
+  }
+
   createGame(f: any) {
     this.apollo.mutate({
       mutation: CREATE_GAME,
@@ -164,6 +203,15 @@ export class GameService {
           }
         }
       },
+    }).subscribe();
+  }
+  
+  deleteGame(id:string) {
+    this.apollo.mutate({
+      mutation: DELETE_GAME,
+      variables: {
+        id: id
+      }
     }).subscribe();
   }
  }

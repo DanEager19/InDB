@@ -15,6 +15,7 @@ import { ApolloModule} from 'apollo-angular';
 import { GraphQLModule } from './graphql.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GameInfoComponent } from './game-info/game-info.component';
+import { DeleteFormComponent } from './delete-form/delete-form.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { GameInfoComponent } from './game-info/game-info.component';
     FooterComponent,
     AboutComponent,
     GamelistComponent,
-    GameInfoComponent
+    GameInfoComponent,
+    DeleteFormComponent
   ],
   imports: [
     BrowserModule,

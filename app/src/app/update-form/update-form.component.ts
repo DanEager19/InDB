@@ -13,29 +13,19 @@ export class UpdateFormComponent implements OnInit {
   loading = true;
   error: any;
   id: string = '';
-  formGroup: FormGroup = new FormGroup({
-    id: new FormControl({value:'', disabled: true}),
-    title: new FormControl(''),
-    summary: new FormControl(''),
-    dev: new FormControl(''),
-    pub: new FormControl(''),
-    date: new FormControl(''),
-    rating: new FormControl(''),
-    os: new FormControl(''),
-    cpu: new FormControl(''),
-    ram: new FormControl(''),
-    gpu: new FormControl(''),
-    storage: new FormControl(''),
-  });
-  constructor(private apollo: Apollo, public gameService: GameService) { 
-    
+  
+  constructor(private apollo: Apollo, private gameService: GameService) { }
+
+  async updateGameForm() {
+    await this.gameService.updateGame(this.id, this.formGroup.value);
   }
 
+  formGroup: FormGroup = this.gameService.gameForm()
   ngOnInit(): void {
     this.apollo.watchQuery({
       query: GET_FULL_GAME,
       variables: {
-        title: 'Ha',
+        title: 'Hades',
       },
     }).valueChanges.subscribe(({data, loading, error}: any) => {
       this.game = data.findGameByTitle;

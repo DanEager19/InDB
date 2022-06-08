@@ -1,0 +1,4 @@
+//Totsugeki
+export class validation {
+    
+}

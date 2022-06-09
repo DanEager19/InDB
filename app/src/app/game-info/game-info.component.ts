@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FourZeroFourComponent } from '../four-zero-four/four-zero-four.component';
 import { GameService, GameType, GET_FULL_GAME, UPDATE_GAME } from '../game.service';
 import { Apollo } from 'apollo-angular';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,13 +14,15 @@ export class GameInfoComponent implements OnInit {
   game!: GameType;
   loading = true;
   error: any;
-  constructor(private apollo: Apollo) { }
+  name: any;
+  constructor(private apollo: Apollo, private router: Router) { }
 
   ngOnInit(): void {
+    this.name = this.router.url.slice(1);
     this.apollo.watchQuery({
       query: GET_FULL_GAME,
       variables: {
-        title: 'Ha',
+        title: this.name,
       },
     }).valueChanges.subscribe(({data, loading, error}: any) => {
       this.game = data.findGameByTitle;

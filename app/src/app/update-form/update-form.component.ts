@@ -14,12 +14,12 @@ export class UpdateFormComponent implements OnInit {
   loading = true;
   error: any;
   id: string = '';
-  name:any;  
+  name:any = '';  
 
   constructor(
     private apollo: Apollo, 
     private gameService: GameService,
-    private route: ActivatedRoute,
+    private router: Router,
   ) { }
 
   async updateGameForm() {
@@ -28,14 +28,12 @@ export class UpdateFormComponent implements OnInit {
 
   formGroup: FormGroup = this.gameService.gameForm()
   async ngOnInit(): Promise<void> {
-    await this.route.queryParams.subscribe(params => {
-      this.name = params['name'];
-    });
+    this.name = this.router.url.slice(8);
 
     await this.apollo.watchQuery({
       query: GET_FULL_GAME,
       variables: {
-        title: 'Hades',
+        title: this.name,
       },
     }).valueChanges.subscribe(({data, loading, error}: any) => {
       this.game = data.findGameByTitle;

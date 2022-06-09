@@ -1,4 +1,7 @@
-<div class="container flexWrap" >
+<div *ngIf="!game">
+    <four-zero-four></four-zero-four>
+</div>
+<div class="container flexWrap" *ngIf="game">
     <div class="flexCol1 centerTag">
         <h1>{{game?.title}}</h1>
         <img id="cover">

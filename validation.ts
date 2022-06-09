@@ -15,7 +15,9 @@ export class validation {
     }
 
     password(p: string) {
-
+        if(p.length < 8) {
+            return false;
+        } 
     }
 
     title(e: string) {

@@ -16,6 +16,7 @@ import { GraphQLModule } from './graphql.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GameInfoComponent } from './game-info/game-info.component';
 import { DeleteFormComponent } from './delete-form/delete-form.component';
+import { FourZeroFourComponent } from './four-zero-four/four-zero-four.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DeleteFormComponent } from './delete-form/delete-form.component';
     AboutComponent,
     GamelistComponent,
     GameInfoComponent,
-    DeleteFormComponent
+    DeleteFormComponent,
+    FourZeroFourComponent
   ],
   imports: [
     BrowserModule,

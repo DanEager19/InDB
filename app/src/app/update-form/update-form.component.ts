@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { GameService, GET_FULL_GAME, UPDATE_GAME } from '../game.service';
+import { GameService, GET_FULL_GAME } from '../game.service';
 import { Apollo } from 'apollo-angular';
-import { FormControl, FormGroup } from '@angular/forms';
+import {  FormGroup } from '@angular/forms';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'update-form',
@@ -13,16 +14,25 @@ export class UpdateFormComponent implements OnInit {
   loading = true;
   error: any;
   id: string = '';
-  
-  constructor(private apollo: Apollo, private gameService: GameService) { }
+  name:any;  
+
+  constructor(
+    private apollo: Apollo, 
+    private gameService: GameService,
+    private route: ActivatedRoute,
+  ) { }
 
   async updateGameForm() {
     await this.gameService.updateGame(this.id, this.formGroup.value);
   }
 
   formGroup: FormGroup = this.gameService.gameForm()
-  ngOnInit(): void {
-    this.apollo.watchQuery({
+  async ngOnInit(): Promise<void> {
+    await this.route.queryParams.subscribe(params => {
+      this.name = params['name'];
+    });
+
+    await this.apollo.watchQuery({
       query: GET_FULL_GAME,
       variables: {
         title: 'Hades',

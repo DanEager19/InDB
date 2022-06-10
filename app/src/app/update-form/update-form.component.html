@@ -1,47 +1,43 @@
 <div class="container" *ngIf="game">
     <form class="form" [formGroup]=formGroup>
-        <div class="row">
+        <div class="row d-flex">         
             <div class="row">
-                <div class="row">
-                    <div class="row">
-                        <div class="p-2">
-                            <h4>General: {{name}}</h4>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3 p-2">
-                            <label htmlFor="id">ID:</label>
-                        </div>
-                        <div class="col p-2">
-                            <input type="text" id="id" name="id" formControlName="id" >
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3 p-2">
-                            <label htmlFor="title">Title:</label>
-                        </div>
-                        <div class="col p-2">
-                            <input type="text" id="title" name="title" formControlName="title" >
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3 p-2">
-                            <label htmlFor="title">Link:</label>
-                        </div>
-                        <div class="col p-2">
-                            <input type="text" id="link" name="link" formControlName="link" >
-                        </div>
-                    </div>
-                    <div class="row">
-                    <div class="col-3 p-2">
-                        <label htmlFor="summary">Summary:</label>
-                    </div>
-                    <div class="col-3 p-2">
-                        <textarea id="summary" name="summary" formControlName="summary" > </textarea>
-                    </div>
+                <div class="p-2">
+                    <h4>General: {{name}}</h4>
                 </div>
             </div>
-
+            <div class="row">
+                <div class="col-3 p-2">
+                    <label htmlFor="id">ID:</label>
+                </div>
+                <div class="col p-2">
+                    <input type="text" id="id" name="id" formControlName="id" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 p-2">
+                    <label htmlFor="title">Title:</label>
+                </div>
+                <div class="col p-2">
+                    <input type="text" id="title" name="title" formControlName="title" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 p-2">
+                    <label htmlFor="title">Link:</label>
+                </div>
+                <div class="col p-2">
+                    <input type="text" id="link" name="link" formControlName="link" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 p-2">
+                    <label htmlFor="summary">Summary:</label>
+                </div>
+                <div class="col-3 p-2">
+                    <textarea id="summary" name="summary" formControlName="summary" > </textarea>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-3 p-2">
                     <h4>Info:</h4>
@@ -79,8 +75,6 @@
                     <input type="text" id="rating" name="rating" formControlName="rating"  >
                 </div>
             </div>
-
-
             <div class="row">
                 <div class="p-2">
                     <h4>System Requirements:</h4>
@@ -136,7 +130,6 @@
                     <button class="button-padding btn btn-secondary" >Cancel</button>
                 </a>
             </div>
-        </div>
         </div>
     </form>
 </div>

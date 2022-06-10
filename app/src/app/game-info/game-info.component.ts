@@ -16,6 +16,7 @@ export class GameInfoComponent implements OnInit {
   loading = true;
   error: any;
   name: any;
+  notFound: boolean = false;
 
   constructor(
     private apollo: Apollo, 
@@ -24,7 +25,6 @@ export class GameInfoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
     this.apollo.watchQuery({
       query: GET_FULL_GAME,
       variables: {
@@ -35,7 +35,7 @@ export class GameInfoComponent implements OnInit {
       this.loading = loading;
       this.error = error;
       this.name = this.game.title;
-      this.title.setTitle(`In-DB - Info | ${this.name}`);
+      this.title.setTitle(`In-DB - ${this.name} | Info`);
     });
   }
 }

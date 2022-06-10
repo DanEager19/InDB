@@ -56,7 +56,7 @@ export class UpdateFormComponent implements OnInit {
         storage: this.game.requirements.storage
       });
       this.name = this.game.title;
-      this.title.setTitle(`In-DB - Update | ${this.name}`);
+      this.title.setTitle(`In-DB - ${this.name} | Update`);
     });
   }
 }

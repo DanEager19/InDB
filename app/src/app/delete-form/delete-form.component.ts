@@ -48,7 +48,7 @@ export class DeleteFormComponent implements OnInit {
         title: this.game.title
       })        
       this.name = this.game.title;
-      this.title.setTitle(`In-DB - Delete | ${this.name}`);
+      this.title.setTitle(`In-DB - ${this.name} | Delete`);
     });
   }
 

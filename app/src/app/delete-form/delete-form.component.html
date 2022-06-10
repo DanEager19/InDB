@@ -28,6 +28,9 @@
                 <a routerLink="/">
                     <button class="btn btn-secondary" type="submit" (click)="deleteGameForm(); formGroup.reset()">Delete</button>
                 </a>
+                <a routerLink="/info/{{game.link}}">
+                    <button class="btn btn-secondary" >Cancel</button>
+                </a>
             </div>
         </div>
     </form>

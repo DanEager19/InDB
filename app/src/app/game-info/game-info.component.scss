@@ -1,0 +1,30 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-left {
+    flex: 30%;
+    align-items: center;
+}
+
+.flex-right {
+    flex: 70%
+}
+
+.flex-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-top {
+    flex: 50%
+}
+
+.flex-bottom {
+    flex: 50%
+}
+.info {
+    margin: 1em;
+    padding: 1em;
+}

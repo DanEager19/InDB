@@ -4,7 +4,9 @@
             <div class="row">
                 <div class="row">
                     <div class="row">
-                        <h4>General: {{name}}</h4>
+                        <div class="p-2">
+                            <h4>General: {{name}}</h4>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-3 p-2">
@@ -34,102 +36,107 @@
                     <div class="col-3 p-2">
                         <label htmlFor="summary">Summary:</label>
                     </div>
-                    <div class="col p-2">
+                    <div class="col-3 p-2">
                         <textarea id="summary" name="summary" formControlName="summary" > </textarea>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="row">
+
+            <div class="row">
+                <div class="col-3 p-2">
                     <h4>Info:</h4>
                 </div>
-                <div class="row">
-                    <div class="col-3 p-2">
-                        <label htmlFor="dev">Developer:</label>
-                    </div>
-                    <div class="col p-2">
-                        <input type="text" id="dev" name="dev"  formControlName="dev" >
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col-3 p-2">
+                    <label htmlFor="dev">Developer:</label>
                 </div>
-                <div class="row">
-                    <div class="col-3 p-2">
-                        <label htmlFor="pub">Publisher:</label>
-                    </div>
-                    <div class="col p-2">
-                        <input type="text" id="pub" name="pub"  formControlName="pub" >
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3 p-2">
-                        <label htmlFor="date">Release Date:</label>
-                    </div>
-                    <div class="col p-2">
-                        <input type="date" id="date" name="date" formControlName="date"  >
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3 p-2">
-                        <label htmlFor="rating">Rating:</label>
-                    </div>
-                    <div class="col p-2">
-                        <input type="text" id="rating" name="rating" formControlName="rating"  >
-                    </div>
+                <div class="col p-2">
+                    <input type="text" id="dev" name="dev"  formControlName="dev" >
                 </div>
             </div>
-            <div class="col">
-                <div class="row">
+            <div class="row">
+                <div class="col-3 p-2">
+                    <label htmlFor="pub">Publisher:</label>
+                </div>
+                <div class="col p-2">
+                    <input type="text" id="pub" name="pub"  formControlName="pub" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 p-2">
+                    <label htmlFor="date">Release Date:</label>
+                </div>
+                <div class="col p-2">
+                    <input type="date" id="date" name="date" formControlName="date"  >
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 p-2">
+                    <label htmlFor="rating">Rating:</label>
+                </div>
+                <div class="col p-2">
+                    <input type="text" id="rating" name="rating" formControlName="rating"  >
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="p-2">
                     <h4>System Requirements:</h4>
                 </div>
-                <div class="row">
-                    <div class="col-3 p-2">
-                        <label htmlFor="os">OS:</label>
-                    </div>
-                    <div class="col p-2">
-                        <input type="text" id="os" name="os" formControlName="os"  >
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col-3 p-2">
+                    <label htmlFor="os">OS:</label>
                 </div>
-                <div class="row">
-                    <div class="col-3 p-2">
-                        <label htmlFor="cpu">Processor:</label>
-                    </div>
-                    <div class="col p-2">
-                        <input type="text" id="cpu" name="cpu" formControlName="cpu"  >
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3 p-2">
-                        <label htmlFor="ram">Memory:</label>
-                    </div>
-                    <div class="col p-2">
-                        <input type="text" id="ram" name="ram" formControlName="ram"  >
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3 p-2">
-                        <label htmlFor="gpu">Graphics:</label>
-                    </div>
-                    <div class="col p-2">
-                        <input type="text" id="gpu" name="gpu" formControlName="gpu"  >
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3 p-2">
-                        <label htmlFor="storage">Storage:</label>
-                    </div>
-                    <div class="col p-2">
-                        <input type="text" id="storage" name="storage" formControlName="storage"  >
-                    </div>
-                </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <a routerLink="/info/{{game.link}}">
-                        <button class="btn btn-secondary" type="submit" (click)="updateGameForm(); formGroup.reset()">Update</button>
-                    </a>
-                    <a routerLink="/info/{{game.link}}">
-                        <button class="btn btn-secondary" >Cancel</button>
-                    </a>
+                <div class="col p-2">
+                    <input type="text" id="os" name="os" formControlName="os"  >
                 </div>
             </div>
+            <div class="row">
+                <div class="col-3 p-2">
+                    <label htmlFor="cpu">Processor:</label>
+                </div>
+                <div class="col p-2">
+                    <input type="text" id="cpu" name="cpu" formControlName="cpu"  >
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 p-2">
+                    <label htmlFor="ram">Memory:</label>
+                </div>
+                <div class="col p-2">
+                    <input type="text" id="ram" name="ram" formControlName="ram"  >
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 p-2">
+                    <label htmlFor="gpu">Graphics:</label>
+                </div>
+                <div class="col p-2">
+                    <input type="text" id="gpu" name="gpu" formControlName="gpu"  >
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 p-2">
+                    <label htmlFor="storage">Storage:</label>
+                </div>
+                <div class="col p-2">
+                    <input type="text" id="storage" name="storage" formControlName="storage"  >
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3 p-2">
+                <a routerLink="/info/{{game.link}}">
+                    <button class="button-padding btn btn-secondary" type="submit" (click)="updateGameForm(); formGroup.reset()">Update</button>
+                </a>
+                <a routerLink="/info/{{game.link}}">
+                    <button class="button-padding btn btn-secondary" >Cancel</button>
+                </a>
+            </div>
+        </div>
         </div>
     </form>
 </div>

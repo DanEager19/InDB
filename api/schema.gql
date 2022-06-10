@@ -19,7 +19,8 @@ type Requirements {
 
 type GameType {
   _id: String
-  title: String!
+  title: String
+  link: String!
   summary: String
   information: Information
   requirements: Requirements
@@ -54,7 +55,8 @@ input RequirementsInput {
 
 input GameInputType {
   _id: String
-  title: String!
+  title: String
+  link: String!
   summary: String
   information: InformationInput
   requirements: RequirementsInput
@@ -74,7 +76,7 @@ input UserInputType {
 
 type Query {
   games: [GameType!]!
-  findGameByTitle(title: String!): GameType!
+  findGameByTitle(link: String!): GameType!
   users: [UserType!]!
 }
 

@@ -12,8 +12,8 @@ export class GameService {
         return this.gameModel.find().exec();
     }
 
-    async findGame(title: string): Promise<Game> {
-        return this.gameModel.findOne({title: title}).exec();
+    async findGame(link: string): Promise<Game> {
+        return this.gameModel.findOne({link: link}).exec();
     }
 
     async create(createGameDto: GameType): Promise<Game> {

@@ -22,6 +22,9 @@ export class Game {
     title: string;
     
     @Prop()
+    link: string;
+
+    @Prop()
     summary: string;
     
     @Prop()

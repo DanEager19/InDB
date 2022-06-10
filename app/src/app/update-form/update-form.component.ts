@@ -3,6 +3,7 @@ import { GameService, GET_FULL_GAME } from '../game.service';
 import { Apollo } from 'apollo-angular';
 import {  FormGroup } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'update-form',
@@ -20,6 +21,7 @@ export class UpdateFormComponent implements OnInit {
     private apollo: Apollo, 
     private gameService: GameService,
     private router: Router,
+    private title: Title
   ) { }
 
   async updateGameForm() {
@@ -28,12 +30,10 @@ export class UpdateFormComponent implements OnInit {
 
   formGroup: FormGroup = this.gameService.gameForm()
   async ngOnInit(): Promise<void> {
-
-    this.name = this.router.url.slice(8);
     await this.apollo.watchQuery({
       query: GET_FULL_GAME,
       variables: {
-        title: this.name,
+        link: this.router.url.slice(8),
       },
     }).valueChanges.subscribe(({data, loading, error}: any) => {
       this.game = data.findGameByTitle;
@@ -43,6 +43,7 @@ export class UpdateFormComponent implements OnInit {
       this.formGroup.setValue({
         id: this.game._id, 
         title: this.game.title,
+        link: this.game.link,
         summary: this.game.summary,
         dev: this.game.information.dev,
         pub: this.game.information.pub,
@@ -53,7 +54,9 @@ export class UpdateFormComponent implements OnInit {
         ram: this.game.requirements.ram,
         gpu: this.game.requirements.gpu,
         storage: this.game.requirements.storage
-      })
+      });
+      this.name = this.game.title;
+      this.title.setTitle(`In-DB - Update | ${this.name}`);
     });
   }
 }

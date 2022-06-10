@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { GameService } from '../game.service';
 
 @Component({
@@ -9,14 +10,17 @@ import { GameService } from '../game.service';
 })
 export class CreateFormComponent implements OnInit {
 
-  constructor(private gameService: GameService) {}
+  constructor(
+    private gameService: GameService, 
+    private title: Title
+  ) {}
   formGroup: FormGroup = this.gameService.gameForm()
   
   async createGameForm() {
     await this.gameService.createGame(this.formGroup.value)
   }
   ngOnInit(): void {
-  
+    this.title.setTitle(`In-DB - Create`);
   }
 
 }

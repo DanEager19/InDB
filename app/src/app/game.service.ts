@@ -19,33 +19,37 @@ interface Requirements {
 };
 
 export interface GameType {
-    _id?:string;
-    title:string;
-    summary?:string;
-    information?:Information;
-    requirements?:Requirements;
+  _id?:string;
+  title?:string;
+  link:string;
+  summary?:string;
+  information?:Information;
+  requirements?:Requirements;
 }
 
 export interface GameInputType {
-    title:string;
-    summary:string;
-    information:Information;
-    requirements:Requirements;
+  title:string;
+  link:string;
+  summary:string;
+  information:Information;
+  requirements:Requirements;
 }
 export const GET_ALL_GAMES = gql`
     query {
         games {
             _id
             title
+            link
         }
     }
 `;
 
 export const GET_FULL_GAME = gql`
-    query findGameByTitle($title: String!) {
-        findGameByTitle(title: $title) {
+    query findGameByTitle($link: String!) {
+        findGameByTitle(link: $link) {
             _id
             title
+            link
             summary
             information {
                 dev
@@ -67,7 +71,8 @@ export const GET_FULL_GAME = gql`
 export const CREATE_GAME = gql`
   mutation createGame($input: GameInputType!) {
     createGame(input: $input) {
-      title,
+      title
+      link
       summary
       information {
           dev
@@ -89,6 +94,7 @@ export const UPDATE_GAME = gql`
   mutation updateGame($id: String!, $input: GameInputType!){
     updateGame(id: $id, input: $input) {
       title
+      link
       summary
       information {
           dev
@@ -111,6 +117,7 @@ export const DELETE_GAME = gql`
   mutation deleteGame($id: String!) {
     deleteGame(id: $id) {
       title
+      link
       summary
       information {
           dev
@@ -140,6 +147,7 @@ export class GameService {
     let formGroup: FormGroup = new FormGroup({
       id: new FormControl({value:'', disabled: true}),
       title: new FormControl(''),
+      link: new FormControl(''),
       summary: new FormControl(''),
       dev: new FormControl(''),
       pub: new FormControl(''),
@@ -160,6 +168,7 @@ export class GameService {
       variables: {
         input: {
           title: f.title,
+          link: f.link,
           summary: f.summary,
           information: {
             dev: f.dev,
@@ -186,6 +195,7 @@ export class GameService {
         id: id,
         input: {
           title: f.title,
+          link: f.link,
           summary: f.summary,
           information: {
             dev: f.dev,

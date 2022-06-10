@@ -41,8 +41,11 @@ export class GameType {
     @Field({nullable: true})
     _id: string;
 
-    @Field()
+    @Field({nullable: true})
     title: string;
+
+    @Field()
+    link: string;
 
     @Field({nullable: true})
     summary: string;

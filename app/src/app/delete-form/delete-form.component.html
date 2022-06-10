@@ -1,36 +1,33 @@
 <div class="container" *ngIf="game">
     <form class="form" [formGroup]=formGroup>
         <div class="row">
+            <div class="row col-3 p-2">
+                <h4>Delete "{{ game.title }}"?</h4>
+            </div>
             <div class="row">
-                <div class="row">
-                    <div class="row col-3 p-2">
-                        <h4>Delete "{{ game.title }}"?</h4>
-                    </div>
-                    <div class="row">
-                        <div class="col-3 p-2">
-                            <label htmlFor="id">ID:</label>
-                        </div>
-                        <div class="col p-2">
-                            <input type="text" id="id" name="id" formControlName="id" >
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-3 p-2">
-                            <label htmlFor="title">Title:</label>
-                        </div>
-                        <div class="col p-2">
-                            <input type="text" id="title" name="title" formControlName="title" >
-                        </div>
-                    </div>
+                <div class="col-3 p-2">
+                    <p>ID: {{game._id}}</p>
                 </div>
             </div>
-            <div class="d-flex">
-                <a routerLink="/">
-                    <button class="button-padding btn btn-secondary" type="submit" (click)="deleteGameForm(); formGroup.reset()">Delete</button>
-                </a>
-                <a routerLink="/info/{{game.link}}">
-                    <button class="button-padding btn btn-secondary" >Cancel</button>
-                </a>
+            <div class="row">
+                <div class="col-3 p-2">
+                    <p>Title: {{game.title}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 p-2">
+                    <p>Link: {{game.link}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 p-2">
+                    <a routerLink="/">
+                        <button class="button-padding btn btn-secondary" type="submit" (click)="deleteGameForm(); formGroup.reset()">Delete</button>
+                    </a>
+                    <a routerLink="/info/{{game.link}}">
+                        <button class="button-padding btn btn-secondary" >Cancel</button>
+                    </a>
+                </div>
             </div>
         </div>
     </form>

@@ -17,6 +17,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GameInfoComponent } from './game-info/game-info.component';
 import { DeleteFormComponent } from './delete-form/delete-form.component';
 import { FourZeroFourComponent } from './four-zero-four/four-zero-four.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { FourZeroFourComponent } from './four-zero-four/four-zero-four.component
     GamelistComponent,
     GameInfoComponent,
     DeleteFormComponent,
-    FourZeroFourComponent
+    FourZeroFourComponent,
+    LoginComponent,
+    RegisterComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,

@@ -18,7 +18,7 @@ export class GameInfoComponent implements OnInit {
   constructor(private apollo: Apollo, private router: Router) { }
 
   ngOnInit(): void {
-    this.name = this.router.url.slice(1);
+    this.name = this.router.url.slice(6);
     this.apollo.watchQuery({
       query: GET_FULL_GAME,
       variables: {

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GameService, GET_FULL_GAME } from '../game.service';
 import { Apollo } from 'apollo-angular';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
   selector: 'delete-form',
   templateUrl: './delete-form.component.html',
@@ -14,7 +14,7 @@ export class DeleteFormComponent implements OnInit {
   error: any;
   id: string = '';
   name:any;
-  constructor(private apollo: Apollo, public gameService: GameService, public route: ActivatedRoute) { }
+  constructor(private apollo: Apollo, public gameService: GameService, private router: Router) { }
   formGroup: FormGroup = new FormGroup({
     id: new FormControl({value:'', disabled: true}),
     title: new FormControl({value:'',disabled: true}),
@@ -25,14 +25,11 @@ export class DeleteFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      this.name = params['name'];
-      console.log(this.name);
-    });
+    this.name = this.router.url.slice(8);
     this.apollo.watchQuery({
       query: GET_FULL_GAME,
       variables: {
-        title: 'Hi',
+        title: this.name,
       },
     }).valueChanges.subscribe(({data, loading, error}: any) => {
       this.game = data.findGameByTitle;

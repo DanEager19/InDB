@@ -11,5 +11,5 @@
 </div>
 
 <div *ngFor="let game of games"> 
-    <p>{{ game.title }}</p>
+    <p><a routerLink="/info/{{game.title}}">{{ game.title }}</a></p>
 </div>

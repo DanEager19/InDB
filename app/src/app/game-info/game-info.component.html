@@ -5,6 +5,10 @@
     <div class="flexCol1 centerTag">
         <h1>{{game?.title}}</h1>
         <img id="cover">
+        <div>
+            <a routerLink="/update/{{game.title}}" class="btn btn-secondary">Update</a>
+            <a routerLink="/delete/{{game.title}}" class="btn btn-secondary">Delete</a>
+        </div>
     </div>
     <div class="d-flex alightcontent-center flex-column">
         <div class="row desc">

@@ -28,8 +28,8 @@ export class UpdateFormComponent implements OnInit {
 
   formGroup: FormGroup = this.gameService.gameForm()
   async ngOnInit(): Promise<void> {
-    this.name = this.router.url.slice(8);
 
+    this.name = this.router.url.slice(8);
     await this.apollo.watchQuery({
       query: GET_FULL_GAME,
       variables: {

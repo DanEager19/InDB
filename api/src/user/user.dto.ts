@@ -7,10 +7,16 @@ class List {
     title: string;
 
     @Field()
+    link: string;
+
+    @Field()
     score: number;
     
     @Field()
-    status: 'Playing' | 'Finished' | 'Paused' | 'Stopped' 
+    playtime: number;
+
+    @Field()
+    status: 'Playing' | 'Finished' | 'Paused' | 'Stopped' | 'Wishlisted'
 }
 
 @ObjectType('UserType')

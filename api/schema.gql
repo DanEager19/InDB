@@ -23,7 +23,9 @@ type GameType {
 
 type List {
   title: String!
+  link: String!
   score: Float!
+  playtime: Float!
   status: String!
 }
 
@@ -54,7 +56,9 @@ input GameInputType {
 
 input ListInput {
   title: String!
+  link: String!
   score: Float!
+  playtime: Float!
   status: String!
 }
 

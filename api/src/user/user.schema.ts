@@ -3,8 +3,10 @@ import { Document } from 'mongoose';
 
 class List {
     title: string
+    link: string
     score: number
-    status: 'Playing' | 'Finished' | 'Paused' | 'Stopped' 
+    playtime: number
+    status: 'Playing' | 'Finished' | 'Paused' | 'Stopped' | 'Wishlisted'
 }
 
 @Schema()

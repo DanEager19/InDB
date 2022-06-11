@@ -6,11 +6,13 @@ import { GameInfoComponent } from './game-info/game-info.component';
 import { GamelistComponent } from './gamelist/gamelist.component';
 import { UpdateFormComponent } from './update-form/update-form.component';
 import { Title } from '@angular/platform-browser';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
   { path: '', component: GamelistComponent },
   { path: 'create', component: CreateFormComponent },
+  { path: 'login', component: LoginComponent},
   { path: 'info',
     children: [
       {path: '**', component: GameInfoComponent}

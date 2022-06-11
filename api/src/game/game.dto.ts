@@ -4,35 +4,28 @@ import { ObjectType, Field, InputType } from "@nestjs/graphql";
 @InputType('InformationInput')
 class Information {
     @Field()
-    dev: string
+    developer: string
 
     @Field()
-    pub: string
+    publisher: string
 
     @Field()
     date: string
 
     @Field()
     rating: 'E' | 'E10' | 'T' | 'M'
-}
-
-@ObjectType('Requirements')
-@InputType('RequirementsInput')
-class Requirements {
-    @Field()
-    os: string
 
     @Field()
-    cpu: string
+    series: string
 
     @Field()
-    ram: string
-    
-    @Field()
-    gpu: string
+    genres: string
 
     @Field()
-    storage: string
+    modes: string
+
+    @Field()
+    platforms: string
 }
 
 @ObjectType('GameType')
@@ -52,7 +45,4 @@ export class GameType {
     
     @Field({nullable: true})
     information: Information;
-
-    @Field({nullable: true})
-    requirements: Requirements;
 }

@@ -9,7 +9,8 @@
         <p>Loading...</p>
     </div>
 </div>
-
-<div *ngFor="let game of games"> 
-    <p><a routerLink="/info/{{game.link}}">{{ game.title }}</a></p>
+<div class="flex-container">
+    <div *ngFor="let game of games" class="flex-image"> 
+        <a routerLink="/info/{{game.link}}"><img class="cover" src="../../assets/{{game.link}}.jpg"></a>
+    </div>
 </div>

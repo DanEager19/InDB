@@ -18,13 +18,19 @@
 }
 
 .flex-top {
-    flex: 50%
+    flex: 45%
 }
 
 .flex-bottom {
-    flex: 50%
+    flex: 55%
 }
 .info {
     margin: 1em;
     padding: 1em;
+}
+.flex-title {
+    flex: 20%;
+}
+.flex-body {
+    flex: 80%;
 }

@@ -25,10 +25,13 @@ $light-black: rgb(48, 48, 48);
 }
 
 .button-padding {
+    color: $red-pink !important;
+    background-color: white !important;
+    border-color: $red-pink !important;
     margin: 0.5em;
 }
 
-#cover {    
+.cover {    
     @include box-shadow();
     width: 232px;
     height: 320px;

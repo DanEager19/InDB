@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Apollo } from 'apollo-angular';
 import { GameInputType, GET_ALL_GAMES } from '../game.service';
 
@@ -12,9 +13,10 @@ export class GamelistComponent implements OnInit {
   loading = true;
   error: any;
 
-  constructor(private apollo: Apollo) {}
+  constructor(private apollo: Apollo, private title: Title) {}
 
   ngOnInit():void {
+    this.title.setTitle(`In-DB`);
     this.apollo.watchQuery({
       query: GET_ALL_GAMES
     }).valueChanges.subscribe(({data, error, loading}: any) => {

@@ -45,18 +45,18 @@
             </div>
             <div class="row">
                 <div class="col-3 p-2">
-                    <label htmlFor="dev">Developer:</label>
+                    <label htmlFor="developer">Developer:</label>
                 </div>
                 <div class="col p-2">
-                    <input type="text" id="dev" name="dev"  formControlName="dev" >
+                    <input type="text" id="developer" name="developer"  formControlName="developer" >
                 </div>
             </div>
             <div class="row">
                 <div class="col-3 p-2">
-                    <label htmlFor="pub">Publisher:</label>
+                    <label htmlFor="publisher">Publisher:</label>
                 </div>
                 <div class="col p-2">
-                    <input type="text" id="pub" name="pub"  formControlName="pub" >
+                    <input type="text" id="publisher" name="publisher"  formControlName="publisher" >
                 </div>
             </div>
             <div class="row">
@@ -76,58 +76,45 @@
                 </div>
             </div>
             <div class="row">
-                <div class="p-2">
-                    <h4>System Requirements:</h4>
+                <div class="col-3 p-2">
+                    <label htmlFor="series">Series:</label>
+                </div>
+                <div class="col p-2">
+                    <input type="text" id="series" name="series" formControlName="series"  >
                 </div>
             </div>
             <div class="row">
                 <div class="col-3 p-2">
-                    <label htmlFor="os">OS:</label>
+                    <label htmlFor="genres">Genres:</label>
                 </div>
                 <div class="col p-2">
-                    <input type="text" id="os" name="os" formControlName="os"  >
+                    <input type="text" id="genres" name="genres" formControlName="genres"  >
                 </div>
             </div>
             <div class="row">
                 <div class="col-3 p-2">
-                    <label htmlFor="cpu">Processor:</label>
+                    <label htmlFor="modes">Modes:</label>
                 </div>
                 <div class="col p-2">
-                    <input type="text" id="cpu" name="cpu" formControlName="cpu"  >
+                    <input type="text" id="modes" name="modes" formControlName="modes"  >
                 </div>
             </div>
             <div class="row">
                 <div class="col-3 p-2">
-                    <label htmlFor="ram">Memory:</label>
+                    <label htmlFor="platforms">Platforms:</label>
                 </div>
                 <div class="col p-2">
-                    <input type="text" id="ram" name="ram" formControlName="ram"  >
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-3 p-2">
-                    <label htmlFor="gpu">Graphics:</label>
-                </div>
-                <div class="col p-2">
-                    <input type="text" id="gpu" name="gpu" formControlName="gpu"  >
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-3 p-2">
-                    <label htmlFor="storage">Storage:</label>
-                </div>
-                <div class="col p-2">
-                    <input type="text" id="storage" name="storage" formControlName="storage"  >
+                    <input type="text" id="platforms" name="platforms" formControlName="platforms"  >
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-3 p-2">
                 <a routerLink="/info/{{game.link}}">
-                    <button class="button-padding btn btn-secondary" type="submit" (click)="updateGameForm(); formGroup.reset()">Update</button>
+                    <button class="button-padding btn" type="submit" (click)="updateGameForm(); formGroup.reset()">Update</button>
                 </a>
                 <a routerLink="/info/{{game.link}}">
-                    <button class="button-padding btn btn-secondary" >Cancel</button>
+                    <button class="button-padding btn" >Cancel</button>
                 </a>
             </div>
         </div>

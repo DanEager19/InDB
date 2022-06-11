@@ -3,28 +3,21 @@ import { Form, FormControl, FormGroup, NgForm } from '@angular/forms';
 import { Apollo, gql, QueryRef } from 'apollo-angular';
 
 interface Information {
-  dev: string;
-  pub: string;
+  developer: string;
+  publisher: string;
   date: string;
   rating: string;
+  series: string;
+  genres: string;
+  modes: string;
+  platforms: string; 
 }
-
-interface Requirements {
-  os: string;
-  cpu: string;
-  ram: string;
-  gpu: string;
-  storage: string;
-
-};
-
 export interface GameType {
   _id?:string;
   title?:string;
   link:string;
   summary?:string;
   information?:Information;
-  requirements?:Requirements;
 }
 
 export interface GameInputType {
@@ -32,7 +25,6 @@ export interface GameInputType {
   link:string;
   summary:string;
   information:Information;
-  requirements:Requirements;
 }
 export const GET_ALL_GAMES = gql`
     query {
@@ -47,23 +39,20 @@ export const GET_ALL_GAMES = gql`
 export const GET_FULL_GAME = gql`
     query findGameByTitle($link: String!) {
         findGameByTitle(link: $link) {
-            _id
-            title
-            link
-            summary
-            information {
-                dev
-                pub
-                date
-                rating
-            }
-            requirements {
-                os
-                cpu
-                ram
-                gpu
-                storage
-            }
+          _id
+          title
+          link
+          summary
+          information {
+            developer
+            publisher
+            date
+            rating
+            series
+            genres
+            modes
+            platforms
+          }
         }
     }
 `;
@@ -75,17 +64,14 @@ export const CREATE_GAME = gql`
       link
       summary
       information {
-          dev
-          pub
-          date
-          rating
-      }
-      requirements {
-          os
-          cpu
-          ram
-          gpu
-          storage
+        developer
+        publisher
+        date
+        rating
+        series
+        genres
+        modes
+        platforms
       }
     }
   }
@@ -97,17 +83,14 @@ export const UPDATE_GAME = gql`
       link
       summary
       information {
-          dev
-          pub
-          date
-          rating
-      }
-      requirements {
-          os
-          cpu
-          ram
-          gpu
-          storage
+        developer
+        publisher
+        date
+        rating
+        series
+        genres
+        modes
+        platforms
       }
     }
   }
@@ -120,17 +103,14 @@ export const DELETE_GAME = gql`
       link
       summary
       information {
-          dev
-          pub
-          date
-          rating
-      }
-      requirements {
-          os
-          cpu
-          ram
-          gpu
-          storage
+        developer
+        publisher
+        date
+        rating
+        series
+        genres
+        modes
+        platforms
       }
     }
   }
@@ -149,15 +129,14 @@ export class GameService {
       title: new FormControl(''),
       link: new FormControl(''),
       summary: new FormControl(''),
-      dev: new FormControl(''),
-      pub: new FormControl(''),
+      developer: new FormControl(''),
+      publisher: new FormControl(''),
       date: new FormControl(''),
       rating: new FormControl(''),
-      os: new FormControl(''),
-      cpu: new FormControl(''),
-      ram: new FormControl(''),
-      gpu: new FormControl(''),
-      storage: new FormControl(''),
+      series: new FormControl(''),
+      genres: new FormControl(''),
+      modes: new FormControl(''),
+      platforms: new FormControl(''),
     });
     return formGroup;
   }
@@ -171,17 +150,14 @@ export class GameService {
           link: f.link,
           summary: f.summary,
           information: {
-            dev: f.dev,
-            pub: f.pub,
+            developer: f.developer,
+            publisher: f.publisher,
             date: f.date,
-            rating: f.rating
-          },
-          requirements: {
-            os: f.os,
-            cpu: f.cpu,
-            ram: f.ram,
-            gpu: f.gpu,
-            storage: f.storage
+            rating: f.rating,
+            series: f.series,
+            genres: f.genres,
+            modes: f.modes,
+            platforms: f.platforms
           }
         }
       },
@@ -198,17 +174,14 @@ export class GameService {
           link: f.link,
           summary: f.summary,
           information: {
-            dev: f.dev,
-            pub: f.pub,
+            developer: f.dev,
+            publisher: f.pub,
             date: f.date,
-            rating: f.rating
-          },
-          requirements: {
-            os: f.os,
-            cpu: f.cpu,
-            ram: f.ram,
-            gpu: f.gpu,
-            storage: f.storage
+            rating: f.rating,
+            series: f.series,
+            genres: f.genres,
+            modes: f.modes,
+            platforms: f.platforms
           }
         }
       },

@@ -45,15 +45,14 @@ export class UpdateFormComponent implements OnInit {
         title: this.game.title,
         link: this.game.link,
         summary: this.game.summary,
-        dev: this.game.information.dev,
-        pub: this.game.information.pub,
+        developer: this.game.information.developer,
+        publisher: this.game.information.publisher,
         date: this.game.information.date,
         rating: this.game.information.rating,
-        os: this.game.requirements.os,
-        cpu: this.game.requirements.cpu,
-        ram: this.game.requirements.ram,
-        gpu: this.game.requirements.gpu,
-        storage: this.game.requirements.storage
+        series: this.game.information.series,
+        genres: this.game.information.genres,
+        modes: this.game.information.modes,
+        platforms: this.game.information.platforms
       });
       this.name = this.game.title;
       this.title.setTitle(`In-DB - ${this.name} | Update`);

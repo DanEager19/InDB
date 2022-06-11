@@ -3,18 +3,14 @@
 # ------------------------------------------------------
 
 type Information {
-  dev: String!
-  pub: String!
+  developer: String!
+  publisher: String!
   date: String!
   rating: String!
-}
-
-type Requirements {
-  os: String!
-  cpu: String!
-  ram: String!
-  gpu: String!
-  storage: String!
+  series: String!
+  genres: String!
+  modes: String!
+  platforms: String!
 }
 
 type GameType {
@@ -23,7 +19,6 @@ type GameType {
   link: String!
   summary: String
   information: Information
-  requirements: Requirements
 }
 
 type List {
@@ -39,18 +34,14 @@ type UserType {
 }
 
 input InformationInput {
-  dev: String!
-  pub: String!
+  developer: String!
+  publisher: String!
   date: String!
   rating: String!
-}
-
-input RequirementsInput {
-  os: String!
-  cpu: String!
-  ram: String!
-  gpu: String!
-  storage: String!
+  series: String!
+  genres: String!
+  modes: String!
+  platforms: String!
 }
 
 input GameInputType {
@@ -59,7 +50,6 @@ input GameInputType {
   link: String!
   summary: String
   information: InformationInput
-  requirements: RequirementsInput
 }
 
 input ListInput {

@@ -37,8 +37,8 @@ export const GET_ALL_GAMES = gql`
 `;
 
 export const GET_FULL_GAME = gql`
-    query findGameByTitle($link: String!) {
-        findGameByTitle(link: $link) {
+    query findGameByLink($link: String!) {
+        findGameByLink(link: $link) {
           _id
           title
           link

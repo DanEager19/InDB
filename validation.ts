@@ -11,10 +11,9 @@ export class validate {
         return rExp.test(e)
     }
 
-    password(p: string): [string, boolean] {
-        if(p.length < 8) {
-            return ["Insufficent Length.", false];
-        } 
+    password(p: string): boolean {
+        const rExp: RegExp = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]$/;
+        return rExp.test(p);
     }
 
     id(i: string) {

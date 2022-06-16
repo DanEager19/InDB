@@ -31,7 +31,7 @@ export class GameInfoComponent implements OnInit {
         link: this.router.url.slice(6),
       },
     }).valueChanges.subscribe(({data, loading, error}: any) => {
-      this.game = data.findGameByTitle;
+      this.game = data.findGameByLink;
       this.loading = loading;
       this.error = error;
       this.name = this.game.title;

@@ -9,10 +9,10 @@ export class GameService {
     constructor(@InjectModel(Game.name) private gameModel: Model<GameDocument>) {}
 
     async findAll(): Promise<Game[]> {
-        return this.gameModel.find().exec();
+        return this.gameModel.find().sort({title:1}).exec();
     }
 
-    async findGame(link: string): Promise<Game> {
+    async findGameByLink(link: string): Promise<Game> {
         return this.gameModel.findOne({link: link}).exec();
     }
 

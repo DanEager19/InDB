@@ -23,6 +23,19 @@ export class GamelistComponent implements OnInit {
       this.loading = loading;
       this.error = error
       this.games = data.games;
+      
+    });
+    this.games.sort((a,b) => {
+      let fa = a.title.toLowerCase(),
+          fb = b.title.toLowerCase();
+
+      if (fa < fb) {
+        return -1;
+      }
+      if (fa > fb) {
+        return 1;
+      }
+      return 0;
     });
   }
 }

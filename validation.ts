@@ -1,13 +1,9 @@
 //Totsugeki
 export class validate {
 
-    username(u: string) {
-        const rExp: RegExp = /Hello/;
-        if(rExp.test(u) === true) {
-            return true;
-        } else {
-            return false;
-        }
+    username(u: string): boolean {
+        const rExp: RegExp = /^[a-zA-Z0-9.-]$/;
+        return rExp.test(u);
     }
 
     email(e: string): boolean {
@@ -15,9 +11,9 @@ export class validate {
         return rExp.test(e)
     }
 
-    password(p: string): string {
+    password(p: string): [string, boolean] {
         if(p.length < 8) {
-            return "Password Length Insufficent. Please provide a password at least 8 characters long.";
+            return ["Insufficent Length.", false];
         } 
     }
 
@@ -29,12 +25,14 @@ export class validate {
 
     }
 
-    link(l: string) {
-
+    link(l: string): boolean {
+        const rExp: RegExp = /^[a-z0-9-]$/;
+        return rExp.test(l);
     }
 
     date(d: string) {
-
+        const rExp: RegExp = /^(\d{2},?)+\/+(\d{2},?)+\/+(\d{4},?)$/
+        return rExp.test(d);
     }
 
     other(o: string) {
@@ -43,3 +41,4 @@ export class validate {
 
     constructor() { } 
 }
+

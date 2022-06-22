@@ -1,18 +1,21 @@
-//Totsugeki
-export class validate {
+export class Validate {
+    constructor() { } 
 
-    public username(u: string): string {
-        const rExp: RegExp = /^[a-zA-Z0-9.-_]{4,}$/;
+    public username(u: string): string[] {
+        let result: string[] = ['', '']
+        const rExp: RegExp = /^[a-zA-Z0-9.-_]$/;
+
         if (u.length < 5) {
-            return 'Username must be at least 4 characters';
-        } else if (!rExp.test(u)) {
-            return 'Username invalid. Can only contain letters, numbers, periods, dashes, or underscores.'
-        } else {
-            return '';
+            result[0] = 'Username must be at least 4 characters';
         }
+        if (!rExp.test(u)) {
+            result[1] ='Username invalid. Can only contain letters, numbers, periods, dashes, or underscores.';
+        } 
+
+        return result;
     }
 
-    public email(e: string){
+    public email(e: string): string {
         const rExp: RegExp = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         if(!rExp.test(e)) {
             return 'Please enter a valid email';
@@ -21,51 +24,57 @@ export class validate {
         }
     }
 
-    password(p: string): any {
+    public password(p: string): string[] {
+        /*
+        for (let i in passwords) {
+            if(passwords[i] != '') {
+                console.log(passwords[i]);
+            }
+        }
+        */
+        let result: string[] = ['', '', '', ''];
         const rExpLetter: RegExp = /\w/,
             rExpDigit: RegExp = /\d/,
             rExpSpecial: RegExp = /[!@#%&|?]/;
         
-        let result: string[] = ['', '', '', '']
-        
         if (p.length < 9) {
-            result[0] = 'Password must be at least 8 characters.'
+            result[0] = 'Password must be at least 8 characters.';
         }
         if (!rExpLetter.test(p)) {
-            result[1] = 'Password must contain at least one letter.'
+            result[1] = 'Password must contain at least one letter.';
         }
         if (!rExpDigit.test(p)) {
-            result[2] = 'Password must contain at least one digit.'
+            result[2] = 'Password must contain at least one digit.';
         }
         if (!rExpSpecial.test(p)) {
-            result[3] = 'Password must contain one ! @ # % & | or ?.'
+            result[3] = 'Password must contain one ! @ # % & | or ?.';
         }
 
         return result;
     }
 
-    id(i: string) {
-
+    public id(i: string): string {
+        const rExp: RegExp = /^[a-z0-9_]$/
+        if (!rExp.test(i)) {
+            return 'ID can only contain lowercase letters, numbers, and underscores.';
+        } else {
+            return '';
+        }
     }
 
-    title(t: string) {
-
-    }
-
-    link(l: string) {
+    public link(l: string): string {
         const rExp: RegExp = /^[a-z0-9-]$/;
-        return rExp.test(l);
+        if (!rExp.test(l)) {
+            return 'ID can only contain lowercase letters, numbers, and dashes.';
+        } else {
+            return '';
+        }
     }
-
-    date(d: string) {
-        const rExp: RegExp = /^(\d{1,2})+\/+(\d{1,2})+\/+(\d{4})$/
-        return rExp.test(d);
+    public empty(e: string): string {
+        if (e === '' || e === null) {
+            return 'Input cannot be empty';
+        } else {
+            return '';
+        }
     }
-
-    other(o: string) {
-
-    }
-
-    constructor() { } 
 }
-

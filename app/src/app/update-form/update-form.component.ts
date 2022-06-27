@@ -36,12 +36,13 @@ export class UpdateFormComponent implements OnInit {
         link: this.router.url.slice(8),
       },
     }).valueChanges.subscribe(({data, loading, error}: any) => {
-      this.game = data.findGameByTitle;
+      this.game = data.findGameByLink;
+      console.log(this.game)
       this.loading = loading;
       this.error = error;
       this.id = this.game._id;
       this.formGroup.setValue({
-        id: this.game.id, 
+        id: this.game._id, 
         title: this.game.title,
         link: this.game.link,
         summary: this.game.summary,

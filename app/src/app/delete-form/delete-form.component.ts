@@ -39,7 +39,7 @@ export class DeleteFormComponent implements OnInit {
         link: this.router.url.slice(8),
       },
     }).valueChanges.subscribe(({data, loading, error}: any) => {
-      this.game = data.findGameByTitle;
+      this.game = data.findGameByLink;
       this.loading = loading;
       this.error = error
       this.id = this.game._id;
@@ -51,5 +51,4 @@ export class DeleteFormComponent implements OnInit {
       this.title.setTitle(`In-DB - ${this.name} | Delete`);
     });
   }
-
 }

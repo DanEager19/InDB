@@ -38,10 +38,10 @@ export class UpdateFormComponent implements OnInit {
     }).valueChanges.subscribe(({data, loading, error}: any) => {
       this.game = data.findGameByTitle;
       this.loading = loading;
-      this.error = error
+      this.error = error;
       this.id = this.game._id;
       this.formGroup.setValue({
-        id: this.game._id, 
+        id: this.game.id, 
         title: this.game.title,
         link: this.game.link,
         summary: this.game.summary,

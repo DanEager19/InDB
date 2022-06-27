@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Form, FormControl, FormGroup, NgForm } from '@angular/forms';
+import { Form, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Apollo, gql, QueryRef } from 'apollo-angular';
 
 interface Information {

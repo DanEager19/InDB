@@ -12,9 +12,13 @@ export class UserService {
         return this.userModel.find().exec();
     }
 
-    async create(createUserDto: UserType): Promise<User> {
+    async register(createUserDto: UserType): Promise<User> {
         const createdUser = new this.userModel(createUserDto);
         return createdUser.save();
+    }
+
+    async login(username: string): Promise<User> {
+        return this.userModel.findOne({username: username}).exec();
     }
 
     async update(id: string, updateUserDto: UserType): Promise<User> {

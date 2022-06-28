@@ -5,15 +5,28 @@ import { UserType } from './user.dto';
 @Resolver()
 export class UserResolver {
     constructor(private readonly userService: UserService) {}
+    
 
     @Query(() => [UserType])
     async users() {
         return this.userService.findAll();
     }
 
+    @Query(() => UserType || String)
+    async login(@Args('username') username: string, @Args('password') password:string) {
+        const user = this.userService.login(username);
+        if (password === (await user).password) {
+            return user;
+        } else {
+            (await user).username, (await user).password = '';
+            (await user).errors = 'Password Incorrect';
+            return user;
+        }
+    }
+
     @Mutation(() => UserType)
-    async createUser(@Args('input') input: UserType) {
-        return this.userService.create(input);
+    async register(@Args('input') input: UserType) {
+        return this.userService.register(input);
     }
     
     @Mutation(() => UserType)

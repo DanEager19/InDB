@@ -2,7 +2,7 @@ import { ObjectType, Field, InputType } from "@nestjs/graphql";
 
 @ObjectType('List')
 @InputType('ListInput')
-class List {
+class Game {
     @Field()
     title: string;
 
@@ -28,6 +28,12 @@ export class UserType {
     @Field()
     username: string;
 
+    @Field()
+    password: string;
+
     @Field({nullable: true})
-    list: List;
+    list: Game;
+
+    @Field({nullable: true})
+    errors: string;
 }

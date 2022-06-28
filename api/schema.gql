@@ -32,7 +32,9 @@ type List {
 type UserType {
   _id: String
   username: String!
+  password: String!
   list: List
+  errors: String
 }
 
 input InformationInput {
@@ -65,20 +67,23 @@ input ListInput {
 input UserInputType {
   _id: String
   username: String!
+  password: String!
   list: ListInput
+  errors: String
 }
 
 type Query {
   games: [GameType!]!
   findGameByLink(link: String!): GameType!
   users: [UserType!]!
+  login(username: String!, password: String!): UserType!
 }
 
 type Mutation {
   createGame(input: GameInputType!): GameType!
   updateGame(id: String!, input: GameInputType!): GameType!
   deleteGame(id: String!): GameType!
-  createUser(input: UserInputType!): UserType!
+  register(input: UserInputType!): UserType!
   updateUser(id: String!, input: UserInputType!): UserType!
   deleteUser(id: String!): UserType!
 }

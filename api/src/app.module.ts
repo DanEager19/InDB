@@ -19,8 +19,6 @@ const auth = require('../cred.json');
     }),
 
     MongooseModule.forRoot(`mongodb+srv://${auth.user}:${auth.password}@cluster0.xcoys.mongodb.net/index?retryWrites=true&w=majority`),
-
-    UserModule,
     ],
   controllers: [AppController],
   providers: [AppService],

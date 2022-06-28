@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
-class List {
+class Game {
     title: string
     link: string
     score: number
@@ -12,13 +12,16 @@ class List {
 @Schema()
 export class User {
     @Prop()
-    _id: string;
-
-    @Prop()
     username: string;
 
     @Prop()
-    list: List;
+    password: string;
+
+    @Prop()
+    list: Game;
+
+    @Prop()
+    errors: string;
 }
 
 export type UserDocument = User & Document;

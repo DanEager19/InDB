@@ -1,14 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
-class Game {
-    title: string
-    link: string
-    score: number
-    playtime: number
-    status: 'Playing' | 'Finished' | 'Paused' | 'Stopped' | 'Wishlisted'
-}
-
 @Schema()
 export class User {
     @Prop()
@@ -17,8 +9,9 @@ export class User {
     @Prop()
     password: string;
 
+    //listKey is used to open the user's database
     @Prop()
-    list: Game;
+    listKey: string;
 
     @Prop()
     errors: string;

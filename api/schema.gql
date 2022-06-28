@@ -21,19 +21,11 @@ type GameType {
   information: Information
 }
 
-type List {
-  title: String!
-  link: String!
-  score: Float!
-  playtime: Float!
-  status: String!
-}
-
 type UserType {
   _id: String
   username: String!
   password: String!
-  list: List
+  listKey: String
   errors: String
 }
 
@@ -56,19 +48,11 @@ input GameInputType {
   information: InformationInput
 }
 
-input ListInput {
-  title: String!
-  link: String!
-  score: Float!
-  playtime: Float!
-  status: String!
-}
-
 input UserInputType {
   _id: String
   username: String!
   password: String!
-  list: ListInput
+  listKey: String
   errors: String
 }
 

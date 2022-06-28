@@ -1,8 +1,8 @@
 import { ObjectType, Field, InputType } from "@nestjs/graphql";
 
-@ObjectType('List')
-@InputType('ListInput')
-export class Game {
+@ObjectType('UserList')
+@InputType('UserListInput')
+export class UserListType {
     @Field()
     title: string;
 

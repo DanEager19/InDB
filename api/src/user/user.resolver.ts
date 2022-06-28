@@ -4,15 +4,14 @@ import { UserType } from './user.dto';
 
 @Resolver()
 export class UserResolver {
-    constructor(private readonly userService: UserService) {}
+    constructor(private readonly userService: UserService) { }
     
-
     @Query(() => [UserType])
     async users() {
         return this.userService.findAll();
     }
 
-    @Query(() => UserType || String)
+    @Query(() => UserType)
     async login(@Args('username') username: string, @Args('password') password:string) {
         const user = this.userService.login(username);
         if (password === (await user).password) {

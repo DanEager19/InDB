@@ -1,8 +1,8 @@
 import { Model } from 'mongoose';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { User, UserDocument } from './user.schema';
-import { UserType } from './user.dto';
+import { User, UserDocument, UserList, UserListDocument } from './user.schema';
+import { UserListType, UserType } from './user.dto';
 
 @Injectable()
 export class UserService {
@@ -27,5 +27,8 @@ export class UserService {
 
     async delete(id: string): Promise<User> {
         return this.userModel.findByIdAndDelete(id);
+    }
+    async addToList(listKey: string, createUserListDto: UserListType) {
+        return addListEntry()
     }
 }

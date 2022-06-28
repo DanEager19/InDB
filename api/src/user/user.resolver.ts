@@ -1,6 +1,6 @@
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { UserService } from './user.service';
-import { UserType } from './user.dto';
+import { UserListType, UserType } from './user.dto';
 
 @Resolver()
 export class UserResolver {
@@ -36,6 +36,11 @@ export class UserResolver {
     @Mutation(() => UserType)
     async deleteUser(@Args('id') id: string) {
         return this.userService.delete(id);
+    }
+
+    @Mutation(()=> UserListType)
+    async addToList(@Args('listKey') listKey: string, createUserListDto: UserListType) {
+        return this.userService.addToList(listKey, createUserListDto);
     }
 }
 

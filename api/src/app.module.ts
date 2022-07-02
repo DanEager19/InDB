@@ -7,8 +7,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { UserModule } from './user/user.module';
 import { UserListModule } from './user-list/user-list.module';
-
-const auth = require('../cred.json'); 
+import { user, password } from '../cred.json';
 
 @Module({
   imports: [
@@ -19,7 +18,7 @@ const auth = require('../cred.json');
       autoSchemaFile: 'schema.gql'
     }),
 
-    MongooseModule.forRoot(`mongodb+srv://${auth.user}:${auth.password}@cluster0.xcoys.mongodb.net/index?retryWrites=true&w=majority`),
+    MongooseModule.forRoot(`mongodb+srv://${user}:${password}@cluster0.xcoys.mongodb.net/index?retryWrites=true&w=majority`),
 
     UserListModule,
     ],

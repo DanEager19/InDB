@@ -19,7 +19,6 @@ import { user, password } from '../cred.json';
     }),
 
     MongooseModule.forRoot(`mongodb+srv://${user}:${password}@cluster0.xcoys.mongodb.net/index?retryWrites=true&w=majority`),
-
     UserListModule,
     ],
   controllers: [AppController],
